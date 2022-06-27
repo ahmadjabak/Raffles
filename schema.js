@@ -61,3 +61,4 @@ let movie = connector.then( () => {
     let new_movie = createMovie();
     let new_admin= createAdmin();
 })
+module.exports= mongos.module("raffle",Raffles)
