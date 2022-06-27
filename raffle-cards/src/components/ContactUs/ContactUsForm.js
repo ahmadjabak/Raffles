@@ -1,14 +1,12 @@
 import "./contact.css"
 import Footer from "../Footer/Footer"
+import Header from "../Header/Header"
 import ContactDesgin from "./ContactUsPageDesign"
 export default function ContactUs() {
   return (
-    <div>
-
-      <Footer />
-    
+    <div> 
+    <Header/>
       <ContactDesgin/>
-      
       <div class="card">
         <h2>Contact Us</h2>
         <div class="row">
@@ -60,6 +58,7 @@ export default function ContactUs() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   )
 }

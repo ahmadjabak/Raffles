@@ -12,10 +12,11 @@
   margin-left: 40px;
   background-color: grey;
   margin-top: 100px;
+  margin-bottom: 70px;
 }
 
 .card h2 {
-  color: rgba(0, 0, 0, 0.3);
+  color: #32be8f;
   font-size: 60px;
 
 }
@@ -57,6 +58,7 @@
   font-size: 24px;
   margin: 0 0 0 30px;
   display: block;
+
 }
 
 .row  .forth{

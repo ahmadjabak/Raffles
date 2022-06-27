@@ -1,6 +1,8 @@
 import HomePageCards from './HomePageCards';
 import luffy from "../images/luffy.jpg"
+import Header from "../Header/Header"
 import Footer from "../Footer/Footer"
+import Home from "./home.jsx"
 const raffles = [
   {
     price: "6.00",
@@ -56,7 +58,8 @@ const raffles = [
 export default function Detailedcards(props) {
   return (
     <div>
-      <Footer />
+      <Header/>
+      <Home/>
 
       <div className="detailed-cards-container">
 
@@ -65,7 +68,11 @@ export default function Detailedcards(props) {
             <HomePageCards price={raffles.price} img={luffy} name={raffles.name} start={raffles.Start} end={raffles.end} />
           )
         }
+       
+        
+        
       </div>
+      <Footer/>
     </div>
   )
 }

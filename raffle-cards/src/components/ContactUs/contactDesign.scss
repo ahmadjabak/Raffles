@@ -24,7 +24,7 @@ $lines-color : fade-out(#fff, .3);
   overflow: hidden;
   color: #fff;
   font-family: 'Open Sans', Helvetica, sans-serif;
-  margin-left: 600px;
+  margin-left: 700px;
 }
 
 .circle {
@@ -35,7 +35,7 @@ $lines-color : fade-out(#fff, .3);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-image: linear-gradient(45deg, grey, green 45%);
+  background-image: linear-gradient(45deg,#32be8f, #32be8f);
   border-radius: 50%;
   animation: circle 1s ease-in-out;
   animation-fill-mode: forwards;
@@ -150,7 +150,7 @@ $lines-color : fade-out(#fff, .3);
   color: #fff;
   line-height: 100px;
   font-family: "yesteryear", cursive;
-  background-image: linear-gradient(33deg, green 25%, green);
+  background-image: linear-gradient(33deg, #32be8f 25%, #32be8f);
   -webkit-text-fill-color: transparent;
   background-clip: text;
   transition: 0.2s ease-in;
@@ -316,13 +316,15 @@ $lines-color : fade-out(#fff, .3);
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 950px) {
   .frame {
     width: 80%;
-    margin: 0;
+    margin-left: 40px;
+
 
 }
 .all{
   width:77%;
+  margin-top: 100px;
 }
 }

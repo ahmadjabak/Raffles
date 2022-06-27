@@ -6,22 +6,19 @@ import {
 import './App.css';
 import Detailedcards from "./components/HomePage/cardsdetails";
 import ContactUs from './components/ContactUs/ContactUsForm';
-import Login from "./components/Login"
+import Login from "./components/Login/Login";
 
 function App() {
   return (
-
     <Router>
       <div className="App">
-
       </div>
       <Routes>
         <Route exact path="/" element={<Detailedcards />} />
         <Route exact path="/contactus" element={<ContactUs />} />
-        <Route exact path="/login" element={<Login />} />
+        <Route exact path="/login" element={<Login/>} />
       </Routes>
     </Router>
-
   );
 }
 
