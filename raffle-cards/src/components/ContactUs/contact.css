@@ -1,22 +1,33 @@
+
+
 .card {
   width: 70%;
   padding: 30px 90px 90px 90px;
+  border: 6px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 20px 20px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 50px;
+  border-left-width: 20px;
   position: relative;
   padding-left: 20%;
+  margin-left: 40px;
+  background-color: grey;
+  margin-top: 100px;
+  margin-bottom: 70px;
 }
 
 .card h2 {
+  color: #32be8f;
   font-size: 60px;
 
 }
 
-.card .row {
-  position: relative;
-  width: 100%;
-  display: grid;
-  grid: auto / auto auto;
-  grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
-  grid-gap: 30px;
+.row .frist{
+  display: flex;
+  justify-content: space-evenly;
+}
+.row .second{
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .card .row .col {
@@ -29,11 +40,11 @@
   position: relative;
   width: 100%;
   height: 40px;
+  
 
 }
 
-.card .row .form-group input,
-.card .row .form-group textarea {
+.card .row .form-group input{
   position: absolute;
   width: 90%;
   height: 100%;
@@ -47,29 +58,47 @@
   font-size: 24px;
   margin: 0 0 0 30px;
   display: block;
+
 }
 
-.row .col:nth-child(6) {
-  margin-top: 64px;
+.row  .forth{
+display: flex;
 }
-
+.row .forth .col .form-group{
+  display: flex;
+justify-content: flex-end;
+ margin-top: 10px;
+}
+.row .third .col .form-group{
+  height: 300px;
+  width: 108%;
+}
 .card .row input[type="submit"] {
   padding: 10px;
-  height: 100%;
-  width: 93%;
+  height: 150%;
+  width: 30%;
   background: transparent;
   line-height: 40px;
   font-size: 24px;
   font-weight: 700;
-  border-radius: 45px;
+  border-radius: 50px;
+  background-color: white;
+
 
 }
 
 @media screen and (max-width: 900px) {
-  .card .row {
-    grid-template-columns: repeat(auto-fit, minmax(70%, 1fr));
+ 
+  .row .frist{
+    display: flex;
+    flex-direction: column;
+    
   }
-
+  .row .second{
+    display: flex;
+    flex-direction: column;
+    
+  }
   .card {
     padding: 20px;
   }
@@ -79,6 +108,12 @@
   }
 
   .card .row input[type="submit"] {
+    width:30%;
+    padding: 0%;
+  }
+  .row .col:nth-child(5) input{
+    height: 300px;
     width: 93%;
   }
+  
 }

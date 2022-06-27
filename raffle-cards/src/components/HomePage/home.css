@@ -1,0 +1,53 @@
+.whole__pic{
+    width: 65%;
+    float: right;
+    background-size: cover;
+    border-top-left-radius: 60%;
+    
+}
+
+.whole{
+    display: flex;
+    background: #666;
+}
+.whole h1{
+    color:#32be8f;
+    font-size: 40px;
+    margin-left: 20px;
+    margin-top:200px;
+}
+.whole__txt p{
+    font-size: 30px;
+    margin-left: 10px;
+    color: white;
+}
+
+@media all and (max-width: 768px){
+
+    .whole h1{
+        font-size: 30px;
+        width: 100%;
+        text-align: center;
+    }
+    .whole__txt p{
+        font-size: 20px;
+        width: 100%;
+        text-align: center;
+        
+    }
+    .whole{
+        display:grid ;
+        width: 100%;
+    }
+
+.whole__pic{
+    width: 100%;
+    margin-top: 10px;
+    
+    }
+}
+
+
+
+
+
