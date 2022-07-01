@@ -62,7 +62,10 @@ font-size: 16px;
     display: flex;
     align-items: center;
 }
-
+.id p{
+    font-size: 10px;
+    visibility: hidden;
+}
 
 .detailed-cards-container{
   display: flex;
@@ -79,8 +82,25 @@ font-size: 16px;
 .title{
     font-size: 40px;
     text-align: center;
+  
 }
- 
+.carousel-item .buttons{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    }
+
+ .buttons input {
+           font-size: 16px;
+            padding: 10px;
+            width: 100%;
+            border: 0;
+            border-radius: 4px;
+            color: #fff;
+            outline: none;
+            border: 2px solid #32be8f;
+            background-color: #32be8f;
+        }
 @media screen and (max-width: 900px) {
     .detailed-cards-container{
   display: flex;
@@ -97,3 +117,4 @@ font-size: 16px;
   
 }
   }
+  

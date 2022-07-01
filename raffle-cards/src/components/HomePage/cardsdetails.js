@@ -3,59 +3,28 @@ import luffy from "../images/luffy.jpg"
 import Header from "../Header/Header"
 import Footer from "../Footer/Footer"
 import Home from "./home.jsx"
-const raffles = [
-  {
-    price: "6.00",
-    name: "traffic raffle",
-    Start: "11/3/2029",
-    end: "11/4/2029"
-  },
-  {
-    price: "6.00",
-    name: "traffic raffle",
-    Start: "11/3/2029",
-    end: "11/4/2029"
-  },
-  {
-    price: "6.00",
-    name: "traffic raffle",
-    Start: "11/3/2029",
-    end: "11/4/2029"
-  },
-  {
-    price: "6.00",
-    name: "traffic raffle",
-    Start: "11/3/2029",
-    end: "11/4/2029"
-  },
-  {
-    price: "6.00",
-    name: "traffic raffle",
-    Start: "11/3/2029",
-    end: "11/4/2029"
-  },
-  {
-    price: "6.00",
-    name: "traffic raffle",
-    Start: "11/3/2029",
-    end: "11/4/2029"
-  },
-  {
-    price: "6.00",
-    name: "traffic raffle",
-    Start: "11/3/2029",
-    end: "11/4/2029"
-  },
-  {
-    price: "6.00",
-    name: "traffic raffle",
-    Start: "11/3/2029",
-    end: "11/4/2029"
-  },
-]
+import {useState, useEffect} from 'react';
 
 
 export default function Detailedcards(props) {
+  const [data, setData]=useState([])
+  useEffect(()=>{
+    fetch("http://localhost:8080/add", {
+           method:'GET',
+            headers: {
+                 "Content-Type": "application/json"
+            }
+ })
+    .then(reponse=>{
+      if(reponse.ok){
+        return reponse.json();
+      } throw reponse;
+    }).then(data=>{
+      setData(data)
+    })
+  },[])
+ 
+  console.log(data);
   return (
     <div>
       <Header/>
@@ -63,11 +32,11 @@ export default function Detailedcards(props) {
 
       <div className="detailed-cards-container">
 
-        {
-          raffles.map((raffles) =>
-            <HomePageCards price={raffles.price} img={luffy} name={raffles.name} start={raffles.Start} end={raffles.end} />
+        { 
+           data.map((datas) => 
+            <HomePageCards id={datas._id} price={datas.price} img={datas.image} name={datas.name} start={datas.startdate} end={datas.endate} /> 
           )
-        }
+        } 
        
         
         

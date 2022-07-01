@@ -4,7 +4,8 @@ import ticket from "../images/download.png"
 import "./homepagecards.css";
 
 
-export default function HomePageCards({img,price,name,start,end}) {
+
+export default function HomePageCards({img,price,name,start,end,id}) {
     return (
         
         <div class="carousel-item ">
@@ -14,13 +15,16 @@ export default function HomePageCards({img,price,name,start,end}) {
                         <div class="logo">
                             <img src={logo}></img>
                         </div>
+                        <div class="id">
+                            <p>{id}</p>
+                        </div>
                         <div class="side">
                             <img src={ticket}></img>
-                            <span>{price}</span>
+                            <span>{price}$</span>
                         </div>
                     </div>
                     <div class="first-row">
-                        <img src={img}></img><div>
+                        <img src={`/images/${img}`}></img><div>
                         </div >
                     </div>
                 </div>

@@ -2,7 +2,12 @@ import "./contact.css"
 import Footer from "../Footer/Footer"
 import Header from "../Header/Header"
 import ContactDesgin from "./ContactUsPageDesign"
+
+
 export default function ContactUs() {
+  
+ 
+
   return (
     <div> 
     <Header/>
@@ -14,14 +19,14 @@ export default function ContactUs() {
           <div class="col">
             <div class="form-group">
               <label>First Name</label>
-              <input type="text" />
+              <input type="text" id="fname" />
             </div>
           </div>
 
           <div class="col">
             <div class="form-group">
               <label>Last name</label>
-              <input type="text" />
+              <input type="text" id="llname"/>
             </div>
           </div>
           </div>
@@ -29,7 +34,7 @@ export default function ContactUs() {
           <div class="col">
             <div class="form-group">
               <label>Email</label>
-              <input type="email" />
+              <input type="email" id="email"/>
             </div>
           </div>
           
@@ -44,7 +49,7 @@ export default function ContactUs() {
           <div class="col">
             <div class="form-group">
               <label>Message</label>
-              <input type="text" />
+              <input type="text" id="mess"/>
             </div>
           </div>
           </div>
@@ -52,13 +57,15 @@ export default function ContactUs() {
           
           <div class="col">
           <div class="form-group">
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Submit" id="ok"/>
             </div>
           </div>
           </div>
         </div>
       </div>
+  
       <Footer />
     </div>
+    
   )
 }
