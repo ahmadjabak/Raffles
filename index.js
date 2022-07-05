@@ -3,16 +3,17 @@ const express =require('express');
 const app = express();
 const cors = require("cors");
 const connection = require("./db");
-
+const searchByTitle = require('./routes/search');
 connection();
 
-
-app.use(express.json())
-app.use(cors()); 
-
-app.get("/", (req,res) =>{
-    res.json({msg:'Success'})
-})
-
+var fs = require('fs');
+var path = require('path');
+require('dotenv/config');
+  app.use(cors());
+const create=require('./routes/createraffles');
+app.use("/raffles",create)
+app.use("/search", searchByTitle);
+   
+ 
 const port = process.env.Port || 8080;
 app.listen(port,()=> console.log(`Listining on port ${port}...`));
