@@ -9,7 +9,7 @@ import {useState, useEffect} from 'react';
 export default function Detailedcards(props) {
   const [data, setData]=useState([])
   useEffect(()=>{
-    fetch("http://localhost:8080/add", {
+    fetch("http://localhost:8080/raffles", {
            method:'GET',
             headers: {
                  "Content-Type": "application/json"

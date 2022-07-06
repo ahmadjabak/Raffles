@@ -37,7 +37,7 @@ $lines-color : fade-out(#fff, .3);
   transform: translate(-50%, -50%);
   background-image: linear-gradient(45deg,#32be8f, #32be8f);
   border-radius: 50%;
-  animation: circle 1s ease-in-out;
+  animation: circle 1s ease-in-out ;
   animation-fill-mode: forwards;
 }
 
