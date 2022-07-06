@@ -16,6 +16,7 @@ app.use("/raffles",create)
 app.use("/search", searchByTitle);
 const getAdmin=require('./routes/getAdmin');
 app.use("/admin",getAdmin)   
- 
+ const getContacts=require('./routes/contacts')
+ app.use("/contactus",getContacts)
 const port = process.env.Port || 8080;
 app.listen(port,()=> console.log(`Listining on port ${port}...`));

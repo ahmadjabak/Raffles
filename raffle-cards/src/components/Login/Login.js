@@ -30,9 +30,9 @@ export default function Login() {
         setData(data)
         if (data.admin) {
           localStorage.setItem('token', data.admin)
-          setTimeout(()=>{
+
             navigate('/raffles',);
-          },1000)
+          
         } else {
           return alert('incorrect username and password')
         }

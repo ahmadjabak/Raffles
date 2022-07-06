@@ -11,8 +11,7 @@ import Login from "./components/Login/Login";
 import ShowRaffles from "./components/ShowRaffles/showRaffles"
 import DashboardSideBar from "./components/DashboadSideBar/SideBar";
 import AddRaffles from "./components/AddRaffles/addRaffles";
-import React, { useState, useEffect } from "react";
-import Error from "./components/error";
+
 //import {Switch} from "react-router-dom"
 
 const token = localStorage.getItem('token')
