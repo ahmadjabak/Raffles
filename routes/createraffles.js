@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
+
 router.use(express.json());
 const ObjectId = require("mongodb").ObjectId;
 const raffles = require("../schema/Raffles")
@@ -18,18 +19,7 @@ router.post("/", (req, res) => {
         (err => res.status(400).json('Error: ' + err))
 });
 
-router.post("/contact", (req, res) => {
-    const NewRaffles = new contact({
-        fname: req.query.image,
-        lname: req.query.name,
-        phonenumber: req.query.price,
-        email: req.query.startdate,
-        meassage: req.query.enddate
-    })
-    NewRaffles.save().then
-        (() => res.json('Raffle Added')).catch
-        (err => res.status(400).json('Error: ' + err))
-});
+
 router.get('/', (req, res) => {
     raffles.find()
         .then(raffles => res.json(raffles))
