@@ -18,7 +18,7 @@ router.post('/',
                 const token = jwt.sign(
                     {
                         username: admin.username,
-                    }, 'secret123', { expiresIn: '120s' }
+                    }, 'secret123', { expiresIn: '12h' }
                 )
                 return res.json({ status: 'ok', admin: token })
             } else {

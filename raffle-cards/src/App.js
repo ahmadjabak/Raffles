@@ -15,7 +15,7 @@ import React, { useState, useEffect } from "react";
 import Error from "./components/error";
 //import {Switch} from "react-router-dom"
 
-const token = localStorage.getItem('token')? localStorage.getItem('token'):null
+const token = localStorage.getItem('token')
 function App() {
   return (
 
@@ -26,12 +26,8 @@ function App() {
         <Route exact path="/" element={<Detailedcards />} />
         <Route exact path="/contactus" element={<ContactUs />} />
         <Route exact path="/login" element={<Login />} />
-        {/* <Route exact path="/raffles" element={(token) ? <DashboardSideBar /> : <Error />} /> */}
-        {token!==null ?
-          <Route exact path="/raffles" element={<DashboardSideBar />} />
-          :
-          <Route exact path="/raffles" element={<Error />} />
-        }
+        <Route exact path="/raffles" element={ <DashboardSideBar />} /> 
+        <Route exact path="/addraffles" element={ <AddRaffles/>} /> 
       </Routes>
     </Router>
 

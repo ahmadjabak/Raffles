@@ -48,12 +48,17 @@ export default function AdminCards({ img, price, name, start, end, id }) {
     setToken(localStorage.getItem('token'))
     setInterval(()=>{
       tokenRemove();
-    }, 120000)
+    }, 43200000)
 
   }
  
     , [])
-
+    useEffect(()=>{
+      const token=localStorage.getItem('token');
+        if(!token) {
+          navigate('/login');
+        }
+    },[])
   return (
 
     <div class="carousel-item ">
