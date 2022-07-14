@@ -126,8 +126,8 @@ legend {
     color: white;
     font-size: 20px;
     border-radius: 3px;
-    padding: 12px 50px;
-    cursor: pointer;
+   
+   
 }
 
 .form input {
@@ -138,6 +138,15 @@ legend {
     padding: 10px 0;
     font: 16px 'Helvetica Neue', Helvetica, sans-serif;
     color: #A64C41;
+}
+.form textarea{
+    border: none;
+    border-bottom: 1px solid #6B6C70;
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    font: 16px 'Helvetica Neue', Helvetica, sans-serif;
+    color: #A64C41; 
 }
 
 .animation {

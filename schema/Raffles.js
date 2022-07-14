@@ -8,6 +8,7 @@ const rafflesSchema = new mongoose.Schema({
   price: { type: Number },
   startdate: { type: String },
   endate: { type: String },
+  desc: { type: String },
 })
 const Raffles = mongoose.model("Raffles", rafflesSchema);
 
