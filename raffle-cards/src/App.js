@@ -11,6 +11,8 @@ import Login from "./components/Login/Login";
 import ShowRaffles from "./components/ShowRaffles/showRaffles"
 import DashboardSideBar from "./components/DashboadSideBar/SideBar";
 import AddRaffles from "./components/AddRaffles/addRaffles";
+import Profile from "./components/Profile/profile";
+import ContactUsDashboard from "./components/ContactUsDashboard/ContactUsDesign"
 
 //import {Switch} from "react-router-dom"
 
@@ -27,6 +29,9 @@ function App() {
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/raffles" element={ <DashboardSideBar />} /> 
         <Route exact path="/addraffles" element={ <AddRaffles/>} /> 
+        <Route exact path="/profile" element={<Profile /> } />
+        <Route exact path="/addraffles" element={<AddRaffles/>}/>
+        <Route exact path="/contactadmin" element={<ContactUsDashboard/>}/>
       </Routes>
     </Router>
 

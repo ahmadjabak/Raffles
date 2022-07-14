@@ -1,8 +1,11 @@
 import React, { useState } from "react"
-import "./contact.css"
+import Logo from '../images/logo.png'
+
+import "./Contact.scss"
 import Footer from "../Footer/Footer"
 import Header from "../Header/Header"
 import ContactDesgin from "./ContactUsPageDesign"
+import { set } from "mongoose"
 export default function ContactUs() {
 
   // const [data, setData]= useState(null);
@@ -12,7 +15,9 @@ export default function ContactUs() {
   const [phonenumber, setPhonenumber] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-  const time = new Date();
+  var now = new Date()
+  var date = now.toLocaleDateString();
+  const time = date;
 
   const Submit = (e) => {
     e.preventDefault();
@@ -31,16 +36,20 @@ export default function ContactUs() {
       headers: { "Contact-Type": "application/json" },
 
     }).then(() => {
-      console.log('Successfuly Sent!');
-    
-    })
+    return alert('Successfuly Sent!'),
+      setLname(''),
+      setFname(''),
+      setEmail(''),
+      setPhonenumber(''),
+      setMessage('');
+    });
 
   }
 
   return (
     <div>
       <Header />
-      <ContactDesgin />
+      {/* <ContactDesgin />
       <div class="card">
         <h2>Contact Us</h2>
         <form class="row" onSubmit={Submit}>
@@ -91,8 +100,39 @@ export default function ContactUs() {
             </div>
           </div>
         </form>
-      </div>
-      <Footer />
+      </div> */}
+      <body className="bodytry">
+        <div class="containerR">
+          <div class="form-containerR">
+            <div class="left-containerR">
+              <div class="left-inner-containerR">
+                <h2>Let's Chat</h2>
+                <p>Whether you have a question, want to start a project or            simply want to connect.</p>
+                <br />
+                <p>Feel free to send me a message in the contact form</p>
+              </div>
+            </div>
+            <div class="right-containerR">
+              <div class="right-inner-containerR">
+                <form action="#" onSubmit={Submit}>
+                  <h2 class="lg-view">Contact Us</h2>
+                  <h2 class="sm-view">Let's Chat</h2>
+
+                  <input type="text" placeholder="First Name" required  value={fname} onChange={(e) => setFname(e.target.value)} />
+             
+                  <input type="text" placeholder="Second Name" required value={lname} onChange={(e) => setLname(e.target.value)}/>
+                  <input type="phone" placeholder="Phone" required value={phonenumber} onChange={(e) => setPhonenumber(e.target.value)} />
+                  <input type="email" placeholder="Email" required value={email} onChange={(e) => setEmail(e.target.value)}  />
+                
+                  <textarea rows="4" placeholder="Message" required value={message} onChange={(e) => setMessage(e.target.value)}  ></textarea>
+                  <button type="submit" value="Submit">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        </body>
+        <Footer />
     </div>
   )
 }

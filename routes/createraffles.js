@@ -1,18 +1,29 @@
 const express = require("express");
 const router = express.Router();
+const multer=require("multer");
 
 
 router.use(express.json());
 const ObjectId = require("mongodb").ObjectId;
 const raffles = require("../schema/Raffles")
 const contact=require("../schema/Contactus")
-router.post("/", (req, res) => {
+
+const storage = multer.diskStorage({
+    destination: (req, file, callback)=>{
+    callback(null,"./raffle-cards/public/images/");
+    },
+    filename: (req,file,callback)=> {
+    callback(null, file.originalname);
+    }
+}) 
+const upload = multer({storage: storage});
+router.post("/", upload.single("ticketImage"),(req, res) => {
     const NewRaffles = new raffles({
-        image: req.query.image,
-        name: req.query.name,
-        price: req.query.price,
-        startdate: req.query.startdate,
-        endate: req.query.enddate
+        image: req.file.originalname,
+        name: req.body.name,
+        price: req.body.price,
+        startdate: req.body.startdate,
+        endate: req.body.enddate
     })
     NewRaffles.save().then
         (() => res.json('Raffle Added')).catch
@@ -26,15 +37,15 @@ router.get('/', (req, res) => {
         .catch(err => res.status(400)
             .json("error: " + err))
 })
-router.put('/:id', (req, res) => {
+router.put('/:id',upload.single("ticketImage"), (req, res) => {
 
     raffles.findOneAndUpdate(({ _id: req.params.id }), {
         $set: {
-            image: req.query.image,
-            name: req.query.name,
-            price: req.query.price,
-            startdate: req.query.startdate,
-            endate: req.query.enddate
+            image: req.file.originalname,
+            name: req.body.name,
+            price: req.body.price,
+            startdate: req.body.startdate,
+            endate: req.body.enddate,
         }
     }, { new: true }, (err, val) => {
         if (val != null) {

@@ -12,7 +12,7 @@ export default function Header() {
                    
                         <div class="imgB">
                             <a href="#"><img class="imgLogo" src={Logo} /></a>
-                            <h3>Raffle<span>Box</span></h3>
+                            <h3 className="h3Header">Raffle<span>Box</span></h3>
                     </div>
 
 

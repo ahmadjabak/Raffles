@@ -21,4 +21,25 @@ router.post('/', async (req, res) => {
 
 });
 
+router.get('/', (req, res) => {
+    contact.find()
+        .then(contact => res.json(contact))
+        .catch(err => res.status(400)
+            .json("error: " + err))
+})
+
+router.delete('/', (req, res) => {
+    contact.findByIdAndDelete(req.query.id)
+        .then(() => res.json('Deleted Successfuly'))
+        .catch(err => res.status(400).json('Error: ' + err))
+})
+
+router.get('/number', (req, res) => {
+
+    contact.count({})
+        .then(raffles => res.json(raffles))
+        .catch(err => res.status(400)
+            .json("error: " + err))
+})
+
 module.exports = router;

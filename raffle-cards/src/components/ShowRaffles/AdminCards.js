@@ -8,7 +8,6 @@ import AddRaffles from "../AddRaffles/addRaffles";
 
 export default function AdminCards({ img, price, name, start, end, id }) {
   const navigate = useNavigate();
-
   const toComponentB = () => {
     navigate('/addraffles', { state: { id: id } });
   }
