@@ -39,7 +39,13 @@ export default function Login() {
       },[])  
   }
   console.log(data)
+  useEffect(() => {
+    const token = localStorage.getItem('token');
 
+    if (token) {
+      navigate('/raffles');
+    }
+  })
   return (
     <div>
       <body>

@@ -12,20 +12,19 @@ li {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px;
     background-color: #666;
-    font: bold 16px sans-serif;
+    font: bold 15px sans-serif;
     color: #fff;
-    padding: 20px 90px;
-    position: sticky;
+    padding: 0px 90px;
+    position: fixed;
     top: 0%;
-    
-    
+    width:90%;
+    z-index: 6969;
 }
 
 .nav-links a {
     color: #fff;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 
@@ -80,9 +79,9 @@ span {
     gap: 0.5rem;
 }
 
-h3{
+.h3Header{
     color: #ffffff;
-    font: normal 36px 'Open Sans', cursive;
+    font: normal 30px 'Open Sans', cursive;
     margin: 0;
 }
 

@@ -1,6 +1,7 @@
 import React from "react"
 import './SideBar.css'
 import Logo from '../images/logo.png'
+import { useEffect,useState } from "react";
 import { BiLogOut } from "react-icons/bi";
 import { AiOutlineHome } from "react-icons/ai"
 import { ImTicket } from "react-icons/im"
@@ -9,10 +10,32 @@ import { CgProfile } from "react-icons/cg"
 import ShowRaffles from "../ShowRaffles/showRaffles";
 import { Link } from "react-router-dom";
 export default function DashboardSideBar() {
-
+const [data,setData]=useState([])
     const onSubmit=(e)=>{
         localStorage.removeItem('token');
     }
+    const fetchRaffles = async() => {
+        await fetch(`http://localhost:8080/contactus/number`, {
+          method: 'GET',
+          headers: {
+            "Content-Type": "application/json"
+          }
+        })
+          .then(reponse => {
+            if (reponse.ok) {
+              return reponse.json();
+            } throw reponse;
+          }).then(data => {
+            setData(data)
+
+          })
+      }
+    console.log(data)
+    useEffect(()=>{
+        fetchRaffles()
+        console.log(data)
+    },[])
+
     return (
 
         <div class="bodySideBar">
@@ -22,9 +45,9 @@ export default function DashboardSideBar() {
                         <div><img src={Logo}></img></div>
                         <ul>
                             <li class="selected"><span class="span1"><AiOutlineHome /></span><label>Raffles</label></li>
-                           <li class="unSelected"><span class="span1"> <ImTicket /></span> <Link to="/addraffles"><label>Add Raffles</label></Link></li>
-                            <li class="unSelected"><span class="span1"> <FaRegAddressCard /></span><Link to="/contactusmessages"><label>Contact Us</label></Link></li>
-                            <li class="unSelected"><span class="span1"> <CgProfile /></span><Link to="/update"><label>Admin</label></Link></li>
+                            <Link to="/addraffles"><li class="unSelected"><span class="span1"> <ImTicket /></span><label>Add Raffles</label></li></Link>
+                           <Link to="/contactadmin"> <li class="unSelected"><span class="span1"> <FaRegAddressCard /></span><label>Contact Us:{data}</label></li></Link>
+                            <Link to="/profile"> <li class="unSelected"><span class="span1"> <CgProfile /></span><label>Admin</label></li> </Link>
                         </ul> <span class="cross-icon"><i class="fas fa-times"></i></span>
                     </div>
                     

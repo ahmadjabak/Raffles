@@ -2,12 +2,11 @@
 import logo from "../images/logo.png"
 import ticket from "../images/download.png"
 import "./homepagecards.css";
+import { FaTicketAlt } from "react-icons/fa"
 
-
-
-export default function HomePageCards({img,price,name,start,end,id}) {
+export default function HomePageCards({ img, price, name, start, end, id }) {
     return (
-        
+
         <div class="carousel-item ">
             <div class="carousel-item-inner">
                 <div class="header">
@@ -19,7 +18,7 @@ export default function HomePageCards({img,price,name,start,end,id}) {
                             <p>{id}</p>
                         </div>
                         <div class="side">
-                            <img src={ticket}></img>
+                            <span class="spanCard"><FaTicketAlt /></span> 
                             <span>{price}$</span>
                         </div>
                     </div>
