@@ -8,7 +8,7 @@ const onSubmit=(e)=>{
     localStorage.removeItem('token');
 }
 
-export default function ContactUsDesign() {
+export default function ContactUsDesign({id}) {
     const [data, setData]=useState([]);
     useEffect(()=>{
       fetch("http://localhost:8080/contactus", {
@@ -25,6 +25,14 @@ export default function ContactUsDesign() {
         setData(data)
       })
     },[])
+    const onSubmitHandler = (id) => {
+       fetch(`http://localhost:8080/contactus?id=${id}`, {
+        method: 'DELETE',
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+    }
     return (
        <form>
         <table className="table">
@@ -40,20 +48,23 @@ export default function ContactUsDesign() {
                 </tr>
             </thead>
             { 
+            
            data.map((datas) => 
-          
+           
            <tbody>
                 <tr>
+                
                     <td>{datas.fname}</td>
                     <td>{datas.lname}</td>
                     <td>{datas.phonenumber}</td>
                     <td>{datas.email}</td>
                     <td>{datas.time}</td>
                     <td>{datas.message}</td>
-                    <td><RiDeleteBin5Line/></td>
+                    <td onClick={()=>onSubmitHandler(datas._id)}><RiDeleteBin5Line/></td>
                 </tr>
                 </tbody>
           )
+          
         } 
                 
         </table>
