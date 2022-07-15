@@ -2,7 +2,7 @@
 
 .back {
 
-    height: 100vh;
+    height: 158vh;
     width: 100%;
     display: flex;
     flex-direction: column-reverse;
@@ -30,7 +30,7 @@
     width: 50%;
     border: 1px solid #46464C;
     border-radius: 3px;
-    padding: 40px;
+    padding: 10px;
     box-shadow: 1px 3px rgb(169, 171, 174);
 }
 
@@ -89,8 +89,8 @@ legend {
 .image-dash img {
 
     background: #fff;
-    width: 100px;
-    height: 100px;
+    // width: 200px;
+    // height: 200px;
     border-radius: 50%;
     margin: 0 auto 40px;
     display: block;
@@ -126,8 +126,8 @@ legend {
     color: white;
     font-size: 20px;
     border-radius: 3px;
-   
-   
+
+
 }
 
 .form input {
@@ -139,14 +139,15 @@ legend {
     font: 16px 'Helvetica Neue', Helvetica, sans-serif;
     color: #A64C41;
 }
-.form textarea{
+
+.form textarea {
     border: none;
     border-bottom: 1px solid #6B6C70;
     display: block;
     width: 100%;
     padding: 10px 0;
     font: 16px 'Helvetica Neue', Helvetica, sans-serif;
-    color: #A64C41; 
+    color: #A64C41;
 }
 
 .animation {

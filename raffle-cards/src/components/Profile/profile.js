@@ -19,12 +19,11 @@ function Profile() {
 
 
     const onSubmitHandler = (e) => {
-
         if (!password || !username || password === " " || username === " "){
             alert("Please Fill all inputs")
         }
         else if (password === confirm) {
-            window.confirm('Are you sure you want to change your profile information?')
+            if(window.confirm('Are you sure you want to change your profile information?')){
     // confirmAlert({
     //             title: 'Confirm to submit',
     //             message: 'Are you sure to do this.',
@@ -40,6 +39,7 @@ function Profile() {
     //             ]
     //           });
             e.preventDefault();
+            
             fetch(`http://localhost:8080/profile?username=${username}&password=${password}`, {
                 method: 'PUT',
                 headers: {
@@ -63,7 +63,7 @@ function Profile() {
             alert('Password is not Matched')
         }
     }
-
+    }
     return (
         <div class="panel">
             <img className="panelavatar" src={Logo} />

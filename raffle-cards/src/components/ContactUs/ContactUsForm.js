@@ -33,15 +33,12 @@ export default function ContactUs() {
 
     fetch(`http://localhost:8080/contactus?fname=${fname}&lname=${lname}&phonenumber=${phonenumber}&email=${email}&time=${time}&message=${message}`, {
       method: 'POST',
-      headers: { "Contact-Type": "application/json" },
+      headers: { "Contact-Type": "application/json" }
+     
 
-    }).then(() => {
-    return alert('Successfuly Sent!'),
-      setLname(''),
-      setFname(''),
-      setEmail(''),
-      setPhonenumber(''),
-      setMessage('');
+    }).then((res) => {
+      console.log("Deleted", res)
+      
     });
 
   }
@@ -125,7 +122,7 @@ export default function ContactUs() {
                   <input type="email" placeholder="Email" required value={email} onChange={(e) => setEmail(e.target.value)}  />
                 
                   <textarea rows="4" placeholder="Message" required value={message} onChange={(e) => setMessage(e.target.value)}  ></textarea>
-                  <button type="submit" value="Submit">Submit</button>
+                  <button type="submit" value="Submit" onClick={()=>window.location.reload()}>Submit</button>
                 </form>
               </div>
             </div>

@@ -2,6 +2,8 @@ import React from "react"
 import "./ContactUsDashboard.css"
 import { RiDeleteBin5Line } from "react-icons/ri"
 import {useState, useEffect} from 'react';
+import HeaderContact from "./HeaderContact";
+
 
 
 const onSubmit=(e)=>{
@@ -25,16 +27,25 @@ export default function ContactUsDesign({id}) {
         setData(data)
       })
     },[])
+
+
     const onSubmitHandler = (id) => {
+      if(window.confirm("Are you sure you want to delete?")){
        fetch(`http://localhost:8080/contactus?id=${id}`, {
         method: 'DELETE',
         headers: {
           "Content-Type": "application/json"
         }
       })
-    }
+      .then((res)=>{
+        console.log("Deleted", res)
+        window.location.reload();
+      })
+    }}
     return (
-       <form>
+      <div>
+        <HeaderContact/>
+       <form className="formContact">
         <table className="table">
             <thead>
                 <tr>
@@ -60,7 +71,7 @@ export default function ContactUsDesign({id}) {
                     <td>{datas.email}</td>
                     <td>{datas.time}</td>
                     <td>{datas.message}</td>
-                    <td onClick={()=>onSubmitHandler(datas._id)}><RiDeleteBin5Line/></td>
+                    <td onClick={()=>onSubmitHandler(datas._id)} className="iconDesign"><RiDeleteBin5Line/></td>
                 </tr>
                 </tbody>
           )
@@ -73,6 +84,6 @@ export default function ContactUsDesign({id}) {
 
 
        </form>
-       
+       </div>
     )
 }

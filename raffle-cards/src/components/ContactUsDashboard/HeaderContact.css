@@ -4,18 +4,22 @@ a {
     text-decoration: none;
 }
 
-.li {
+/* li {
     list-style: none;
-}
+} */
 
-.navbar {
+.backContact{
+    font-size: 3.5rem;
+    color: #32be8f;
+}
+.navbarr {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #666;
+    background-color: white;
     font: bold 15px sans-serif;
     color: #fff;
-    padding: 0px 90px;
+    padding: 0px 50px;
     position: fixed;
     top: 0%;
     width:90%;

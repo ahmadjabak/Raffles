@@ -1,11 +1,23 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Roboto');
 
 
+/* .formContact{
+    padding: 200px;
+} */
+
+.iconDesign{
+    color: #32be8f;
+}
+
+.iconDesign:hover{
+    color: red;
+}
+
 .table {
     position: absolute;
     z-index: 2;
     left: 50%;
-    top: 20%;
+    top: 30%;
     transform: translate(-50%, -50%);
     width: 60%;
     border-collapse: collapse;
