@@ -58,7 +58,7 @@ export default function ShowRaffles(props) {
            
           {
             data1.map((datas) =>
-              <AdminCards id={datas._id} price={datas.price} img={datas.image} name={datas.name} start={datas.startdate} end={datas.endate} />
+              <AdminCards id={datas._id} desc={datas.desc} price={datas.price} img={datas.image} name={datas.name} start={datas.startdate} end={datas.endate} />
              
              
             )
@@ -69,8 +69,8 @@ export default function ShowRaffles(props) {
         <div className="detailed-cards-container">
 
           {
-            data.map((datas,data2) =>
-              <AdminCards id={datas._id} price={datas.price} img={datas.image} name={datas.name} start={datas.startdate} end={datas.endate} />,
+            data.map((datas) =>
+              <AdminCards id={datas._id} desc={datas.desc} price={datas.price} img={datas.image} name={datas.name} start={datas.startdate} end={datas.endate} />,
             
             )
           }

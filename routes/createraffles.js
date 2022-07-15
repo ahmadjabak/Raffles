@@ -23,7 +23,8 @@ router.post("/", upload.single("ticketImage"),(req, res) => {
         name: req.body.name,
         price: req.body.price,
         startdate: req.body.startdate,
-        endate: req.body.enddate
+        endate: req.body.enddate,
+        desc:req.body.desc
     })
     NewRaffles.save().then
         (() => res.json('Raffle Added')).catch
@@ -46,6 +47,7 @@ router.put('/:id',upload.single("ticketImage"), (req, res) => {
             price: req.body.price,
             startdate: req.body.startdate,
             endate: req.body.enddate,
+            desc:req.body.desc
         }
     }, { new: true }, (err, val) => {
         if (val != null) {

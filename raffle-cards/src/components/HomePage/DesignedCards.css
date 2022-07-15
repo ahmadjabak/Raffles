@@ -49,7 +49,7 @@
     transition: .5s;
 }
 
-.boxHome:hover input{
+.boxHome input:focus{
     width: 350px;
     background:  white;
     border-radius: 10px;
@@ -63,7 +63,7 @@
     color: #32be8f;
     transition: .2s;
 }
-.boxHome:hover i{
+.boxHome:focus i{
     opacity: 0;
     z-index: -1;
 }
@@ -72,6 +72,7 @@
 .searchHome {
     display: flex;
     align-items: center;
+  
 }
 
 /* .searchh {

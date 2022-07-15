@@ -15,7 +15,7 @@ export default function AddRaffles() {
   const [price, setPrice] = useState('');
   const [start, setStart] = useState('');
   const [end, setEnd] = useState('');
-
+  const [desc, setDesc] = useState('');
   const onChangeFile = e => {
 
     setImage(e.target.files[0]);
@@ -61,6 +61,7 @@ export default function AddRaffles() {
     formData.append("price", price)
     formData.append("startdate", start)
     formData.append("enddate", end)
+    formData.append("desc", desc)
     e.preventDefault();
     axios
       .post("http://localhost:8080/raffles", formData, {
@@ -81,7 +82,7 @@ export default function AddRaffles() {
     formData.append("price", price)
     formData.append("startdate", start)
     formData.append("enddate", end)
-
+    formData.append("desc", desc)
     e.preventDefault();
     axios
       .put(`http://localhost:8080/raffles/${location.state.id}`, formData, {
@@ -112,6 +113,7 @@ export default function AddRaffles() {
         setPrice(data.price)
         setStart(data.startdate)
         setEnd(data.endate)
+        setDesc(data.desc)
       })
   }
 
@@ -140,6 +142,7 @@ export default function AddRaffles() {
               <input type="text" class="form-field animation a3" placeholder="Price" value={price} onChange={(e) => { setPrice(e.target.value) }} required />
               <input type="date" class="form-field animation a4" placeholder="Start Date" value={start} onChange={(e) => { setStart(e.target.value) }} required />
               <input type="date" class="form-field animation a3" placeholder="End Date" value={end} onChange={(e) => { setEnd(e.target.value) }} required />
+              <textarea type="text" class="form-field animation a4" placeholder="Description" value={desc} onChange={(e) => { setDesc(e.target.value) }} required />
               <div class="save">
                 <div>
                   <input type="submit" value="SAVE" className="btn" onClick={onSubmitHandler} />
@@ -174,6 +177,7 @@ export default function AddRaffles() {
               <input type="text" class="form-field animation a3" placeholder="Price" value={price} onChange={(e) => { setPrice(e.target.value) }} required />
               <input type="text" class="form-field animation a4" placeholder="Start Date" value={start} onChange={(e) => { setStart(e.target.value) }} required />
               <input type="text" class="form-field animation a3" placeholder="End Date" value={end} onChange={(e) => { setEnd(e.target.value) }} required />
+              <textarea type="text" class="form-field animation a4" placeholder="Description" value={desc} onChange={(e) => { setDesc(e.target.value) }} required />
               <div class="save">
 
                 <input type="submit" value="EDIT" className="btn" onClick={onSubmitHandlers} />

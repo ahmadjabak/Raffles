@@ -1,12 +1,12 @@
 import logo from "../images/logo.png"
 import ticket from "../images/download.png"
-
+import { FaTicketAlt } from "react-icons/fa"
 import "../HomePage/homepagecards.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import AddRaffles from "../AddRaffles/addRaffles";
 
-export default function AdminCards({ img, price, name, start, end, id }) {
+export default function AdminCards({ img, price, name, start, end, id,desc }) {
   const navigate = useNavigate();
   const toComponentB = () => {
     navigate('/addraffles', { state: { id: id } });
@@ -17,7 +17,7 @@ export default function AdminCards({ img, price, name, start, end, id }) {
   const onSubmitHandler = async (e) => {
 
     console.log(id)
-    await fetch(`http://localhost:8080/add?id=${id}`, {
+    await fetch(`http://localhost:8080/raffles?id=${id}`, {
       method: 'DELETE',
       headers: {
         "Content-Type": "application/json"
@@ -62,6 +62,7 @@ export default function AdminCards({ img, price, name, start, end, id }) {
 
     <div class="carousel-item ">
       <div class="carousel-item-inner">
+      <div className="carousel-item-front">
         <div class="header">
           <div class="up">
             <div class="logo">
@@ -71,7 +72,7 @@ export default function AdminCards({ img, price, name, start, end, id }) {
               <p>{id}</p>
             </div>
             <div class="side">
-              <img src={ticket}></img>
+            <span class="spanCard"><FaTicketAlt /></span> 
               <span>{price}$</span>
             </div>
           </div>
@@ -85,7 +86,15 @@ export default function AdminCards({ img, price, name, start, end, id }) {
           <p>Start Date: {start}</p>
           <p>End Date: {end}</p>
         </div>
-        <form class="buttons" onSubmit={onSubmitHandler}>
+        </div>
+        <div class="carousel-item-back">
+                    
+                    <h1>Description:</h1>
+                <p>{desc}</p>
+            </div>
+       
+      </div>
+      <form class="buttons" onSubmit={onSubmitHandler}>
           <div>
             <input type="submit" value="DELETE" />
           </div>
@@ -95,8 +104,6 @@ export default function AdminCards({ img, price, name, start, end, id }) {
             <input type="submit" value="EDIT" onClick={() => { toComponentB() }} />
           </div>
         </form>
-      </div>
-
     </div>
   )
 }
