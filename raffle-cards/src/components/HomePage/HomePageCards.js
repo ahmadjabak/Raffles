@@ -6,7 +6,6 @@ import { FaTicketAlt } from "react-icons/fa"
 
 export default function HomePageCards({ img, price, name, start, end, id,desc }) {
     return (
-
         <div class="carousel-item ">
             <div class="carousel-item-inner">
                 <div className="carousel-item-front">
@@ -45,7 +44,7 @@ export default function HomePageCards({ img, price, name, start, end, id,desc })
                 <p>{desc}</p>
             </div>
             </div>
-            <button>BUY TICKETS NOW</button> 
+            <button >BUY TICKETS NOW</button> 
 
         </div>
     )

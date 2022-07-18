@@ -9,8 +9,10 @@ import { FaRegAddressCard } from "react-icons/fa"
 import { CgProfile } from "react-icons/cg"
 import ShowRaffles from "../ShowRaffles/showRaffles";
 import { Link } from "react-router-dom";
+import LoadingPage from "../LoadingPage/LoadingPage";
 export default function DashboardSideBar() {
     const [data, setData] = useState([])
+    const [loading, setLoading] = useState(true);
     const onSubmit = (e) => {
         localStorage.removeItem('token');
     }
@@ -27,7 +29,7 @@ export default function DashboardSideBar() {
                 } throw reponse;
             }).then(data => {
                 setData(data)
-
+                setLoading(false);
             })
     }
     console.log(data)
@@ -35,6 +37,8 @@ export default function DashboardSideBar() {
         fetchRaffles()
         console.log(data)
     }, [])
+
+    if (loading) return <LoadingPage />;
 
     return (
 

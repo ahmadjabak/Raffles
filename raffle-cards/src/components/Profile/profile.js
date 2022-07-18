@@ -1,6 +1,6 @@
 import React from 'react'
 import './profile.css'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'
 import Logo from '../images/logo.png'
 import { confirmAlert } from 'react-confirm-alert';
@@ -11,6 +11,33 @@ function Profile() {
     const [password, setpassword] = useState('');
     const navigate = useNavigate();
     const [confirm, setconfirm] = useState('');
+    const [token, setToken] = useState(null);
+    const tokenRemove = () => {
+        localStorage.removeItem('token');
+        setToken(localStorage.getItem('token'))
+        console.log(!token);
+        if(!token) {
+          navigate('/login');
+        }
+      }
+
+      useEffect(() => {
+        setToken(localStorage.getItem('token'))
+        setInterval(()=>{
+          tokenRemove();
+        }, 43200000)
+
+      }
+
+        , [])
+        useEffect(()=>{
+          const token=localStorage.getItem('token');
+            if(!token) {
+              navigate('/login');
+            }
+        },[])
+
+
 
     function thenav() {
         navigate('/raffles');
@@ -52,7 +79,7 @@ function Profile() {
                         return reponse.json();
                     } throw reponse;
                 }).then(data => {
-
+                    
                     setData(data)
                     alert('Username and Password Changed!!');
                     navigate('/raffles');
@@ -64,6 +91,7 @@ function Profile() {
         }
     }
     }
+    
     return (
         <div class="panel">
             <img className="panelavatar" src={Logo} />

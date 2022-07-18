@@ -7,6 +7,7 @@ import DesignedCards from './DesignedCards';
 import './ImageSlider.css';
 import { useState, useEffect } from 'react';
 import { AiOutlineSearch } from "react-icons/ai"
+import LoadingPage from "../LoadingPage/LoadingPage";
 
 
 
@@ -14,6 +15,7 @@ export default function Detailedcards(props) {
   const [data, setData] = useState([])
   const [data1, setData1] = useState([])
   const [name, setName] = useState('');
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     fetch("http://localhost:8080/raffles", {
       method: 'GET',
@@ -27,6 +29,7 @@ export default function Detailedcards(props) {
         } throw reponse;
       }).then(data => {
         setData(data)
+        setLoading(false);
       })
   }, [])
   const onSubmitHandler = async (e, name) => {
@@ -48,6 +51,8 @@ export default function Detailedcards(props) {
       })
   }
   console.log(data);
+  if (loading) return <LoadingPage />;
+ 
   return (
     <div>
       <Header />
@@ -64,38 +69,38 @@ export default function Detailedcards(props) {
           </form>
           <i class="fas fa-search"> <AiOutlineSearch /></i>
 
-          </div>
+        </div>
 
-</div>
+      </div>
 
-          {(data1.length > 0) ?
+      {(data1.length > 0) ?
 
-            <div className="detailed-cards-container">
+        <div className="detailed-cards-container">
 
-              {
-                data1.map((datas) =>
-                  <HomePageCards id={datas._id} desc={datas.desc} price={datas.price} img={datas.image} name={datas.name} start={datas.startdate} end={datas.endate} />
+          {
+            data1.map((datas) =>
+              <HomePageCards id={datas._id} desc={datas.desc} price={datas.price} img={datas.image} name={datas.name} start={datas.startdate} end={datas.endate} />
 
 
-                )
+            )
 
-              }
-
-            </div> :
-            <div className="detailed-cards-container">
-
-              {
-                data.map((datas) =>
-                  <HomePageCards id={datas._id} desc={datas.desc} price={datas.price} img={datas.image} name={datas.name} start={datas.startdate} end={datas.endate} />,
-
-                )
-              }
-
-            </div>
           }
 
+        </div> :
+        <div className="detailed-cards-container">
 
-      
+          {
+            data.map((datas) =>
+              <HomePageCards id={datas._id} desc={datas.desc} price={datas.price} img={datas.image} name={datas.name} start={datas.startdate} end={datas.endate} />,
+
+            )
+          }
+
+        </div>
+      }
+
+
+
       <Footer />
     </div>
   )

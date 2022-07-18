@@ -9,7 +9,7 @@ import AddRaffles from "../AddRaffles/addRaffles";
 export default function AdminCards({ img, price, name, start, end, id,desc }) {
   const navigate = useNavigate();
   const toComponentB = () => {
-    navigate('/addraffles', { state: { id: id } });
+    navigate('/editraffles', { state: { id: id } });
   }
   const [data, setData] = useState([]);
   const [token, setToken] = useState(null);
@@ -17,6 +17,7 @@ export default function AdminCards({ img, price, name, start, end, id,desc }) {
   const onSubmitHandler = async (e) => {
 
     console.log(id)
+    if (window.confirm("Are you sure you want to delete this raffle?")){
     await fetch(`http://localhost:8080/raffles?id=${id}`, {
       method: 'DELETE',
       headers: {
@@ -32,7 +33,7 @@ export default function AdminCards({ img, price, name, start, end, id,desc }) {
         setData(data)
       })
 
-  }
+  }}
  
   const tokenRemove = () => {
     localStorage.removeItem('token');

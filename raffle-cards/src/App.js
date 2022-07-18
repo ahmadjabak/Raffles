@@ -31,6 +31,7 @@ function App() {
         <Route exact path="/addraffles" element={ <AddRaffles/>} /> 
         <Route exact path="/profile" element={<Profile /> } />
         <Route exact path="/addraffles" element={<AddRaffles/>}/>
+        <Route exact path="/editraffles" element={<AddRaffles/>}/>
         <Route exact path="/contactadmin" element={<ContactUsDashboard/>}/>
       </Routes>
     </Router>

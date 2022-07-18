@@ -4,6 +4,9 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import "./addraffles.scss"
 import e from "cors";
+import LoadingPage from "../LoadingPage/LoadingPage";
+
+
 export default function AddRaffles() {
   const location = useLocation();
   const navigate = useNavigate();
@@ -16,6 +19,8 @@ export default function AddRaffles() {
   const [start, setStart] = useState('');
   const [end, setEnd] = useState('');
   const [desc, setDesc] = useState('');
+  const [loading, setLoading] = useState(true);
+
   const onChangeFile = e => {
 
     setImage(e.target.files[0]);
@@ -84,6 +89,7 @@ export default function AddRaffles() {
     formData.append("enddate", end)
     formData.append("desc", desc)
     e.preventDefault();
+
     axios
       .put(`http://localhost:8080/raffles/${location.state.id}`, formData, {
 
@@ -92,12 +98,13 @@ export default function AddRaffles() {
       })
       .then((res) => console.log('Successfuly Sent!'))
       .catch((err) => {
+
         console.log(err);
       });
   }
 
-  const fetchRaffles = async() => {
-    await fetch(`http://localhost:8080/get/${id ? id : location.state.id}`, {
+  const fetchRaffles = async () => {
+    await fetch(`http://localhost:8080/get/${id || location.state.id}`, {
       method: 'GET',
       headers: {
         "Content-Type": "application/json"
@@ -107,13 +114,16 @@ export default function AddRaffles() {
         if (reponse.ok) {
           return reponse.json();
         } throw reponse;
-      }).then(data => {
+      })
+      .then(data => {
+
         setData(data)
         setName(data.name)
         setPrice(data.price)
         setStart(data.startdate)
         setEnd(data.endate)
         setDesc(data.desc)
+
       })
   }
 
@@ -123,7 +133,7 @@ export default function AddRaffles() {
     console.log(data)
   }, [])
 
-
+  // if (loading) return <LoadingPage />;
   if (id === null) {
     return (
 
@@ -136,17 +146,21 @@ export default function AddRaffles() {
 
 
             <div class="form" encType="multipart/from-data">
-
               <input type="text" class="form-field animation a3" placeholder="Raffle Name" value={name} onChange={(e) => { setName(e.target.value) }} required />
               <input type="file" id="upload-image" class="form-field animation a4" placeholder="Image" onChange={onChangeFile} required />
               <input type="text" class="form-field animation a3" placeholder="Price" value={price} onChange={(e) => { setPrice(e.target.value) }} required />
-              <input type="date" class="form-field animation a4" placeholder="Start Date" value={start} onChange={(e) => { setStart(e.target.value) }} required />
-              <input type="date" class="form-field animation a3" placeholder="End Date" value={end} onChange={(e) => { setEnd(e.target.value) }} required />
+
+              <label for="Start Date" className="start_end">Start Date</label>
+              <input type="date" class="form-field animation a4" id="imputDate" value={start} onChange={(e) => { setStart(e.target.value) }} required />
+
+              <label for="Start Date" className="start_end">End Date</label>
+              <input type="date" class="form-field animation a3" value={end} onChange={(e) => { setEnd(e.target.value) }} required />
+
               <textarea type="text" class="form-field animation a4" placeholder="Description" value={desc} onChange={(e) => { setDesc(e.target.value) }} required />
               <div class="save">
                 <div>
-                  <input type="submit" value="SAVE" className="btn" onClick={onSubmitHandler} />
-                  <input type="submit" value="BACK" className="btn" onClick={getBack} />
+                  <button type="submit" className="btn" onClick={onSubmitHandler}>ADD</button>
+                  <button type="submit" className="btn" onClick={getBack}>BACK</button>
                 </div>
               </div>
 
@@ -172,16 +186,24 @@ export default function AddRaffles() {
               <img src="../images/logo.png" />
             </div>
             <div class="form" encType="multipart/from-data">
+            <label for="Start Date" className="start_end">Raffle Name</label>
               <input type="text" class="form-field animation a3" placeholder="Raffle Name" value={name} onChange={(e) => setName(e.target.value)} required />
+              <label for="Start Date" className="start_end">Image</label>
               <input type="file" class="form-field animation a4" onChange={onChangeFile} required />
+              <label for="Start Date" className="start_end">Price</label>
               <input type="text" class="form-field animation a3" placeholder="Price" value={price} onChange={(e) => { setPrice(e.target.value) }} required />
+              <label for="Start Date" className="start_end">Start Date</label>
               <input type="text" class="form-field animation a4" placeholder="Start Date" value={start} onChange={(e) => { setStart(e.target.value) }} required />
-              <input type="text" class="form-field animation a3" placeholder="End Date" value={end} onChange={(e) => { setEnd(e.target.value) }} required />
+              <label for="Start Date" className="start_end">End Date</label>
+              <input type="text" class="form-field animation a3" value={end} onChange={(e) => { setEnd(e.target.value) }} required />
+              <label for="Start Date" className="start_end">Message</label>
               <textarea type="text" class="form-field animation a4" placeholder="Description" value={desc} onChange={(e) => { setDesc(e.target.value) }} required />
               <div class="save">
 
-                <input type="submit" value="EDIT" className="btn" onClick={onSubmitHandlers} />
-                <input type="submit" value="BACK" className="btn" onClick={getBack} />
+                {/* <input type="submit" value="EDIT" className="btn" onClick={onSubmitHandlers} />
+                <input type="submit" value="BACK" className="btn" onClick={getBack} /> */}
+                <button type="submit" className="btn" onClick={onSubmitHandler}>SAVE</button>
+                <button type="submit" className="btn" onClick={getBack}>BACK</button>
               </div>
             </div>
           </div>
