@@ -8,6 +8,7 @@ import './ImageSlider.css';
 import { useState, useEffect } from 'react';
 import { AiOutlineSearch } from "react-icons/ai"
 import LoadingPage from "../LoadingPage/LoadingPage";
+import ScrollToTop from "react-scroll-to-top";
 
 
 
@@ -50,6 +51,7 @@ export default function Detailedcards(props) {
         setData1(data1)
       })
   }
+  
   console.log(data);
   if (loading) return <LoadingPage />;
  
@@ -58,6 +60,7 @@ export default function Detailedcards(props) {
       <Header />
       <Home />
       <DesignedCards />
+      <ScrollToTop className="icon-position icon-style" />
       <h1 className="h1carddetails">
         Find something memorable, join a community doing good.
       </h1>

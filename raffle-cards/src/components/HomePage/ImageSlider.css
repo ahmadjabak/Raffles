@@ -8,6 +8,7 @@ body, html{
 		overflow-X: hidden;
 	} */
 
+
 #i1,
 #i2,
 #i3,
@@ -16,9 +17,58 @@ body, html{
     display: none;
 }
 
-.the_buttons{
+.the_buttons {
     display: none;
 }
+
+.icon-position {
+    position: fixed;
+    bottom: 40px;
+    right: 25px;
+    z-index: 20;
+}
+
+.icon-style {
+    background-color: #32be8f;
+    border: 2px solid #fff;
+    height: 50px;
+    color: #fff;
+    cursor: pointer;
+    animation: movebtn 3s ease-in-out infinite;
+    transition: all .5s ease-in-out;
+}
+
+.icon-style:hover {
+    animation: none;
+    background: #fff;
+    color: #32be8f;
+    border: 2px solid #32be8f;
+}
+
+@keyframes movebtn {
+    0% {
+        transform: translateY(0px);
+    }
+
+    25% {
+        transform: translateY(20px);
+    }
+
+    50% {
+        transform: translateY(0px);
+    }
+
+    75% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+
+
 .containerr {
     margin: 0 auto;
     margin-top: 30px;
@@ -32,7 +82,7 @@ body, html{
     border-radius: 10px;
     margin-right: 15px;
     margin-top: 7%;
-    
+
 }
 
 .the_image {

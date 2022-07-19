@@ -68,16 +68,24 @@ export default function AddRaffles() {
     formData.append("enddate", end)
     formData.append("desc", desc)
     e.preventDefault();
-    axios
-      .post("http://localhost:8080/raffles", formData, {
-        method: 'POST',
-        headers: { 'Content-Type': 'multipart/form-data' },
+    if (!name || !price || !image || !start || !end || !desc) {
+      alert("Please Fill all the requirment fields!")
+    }
+    else if (window.confirm("Are you sure you want to add this raffle ?")) {
+      axios
+        .post("http://localhost:8080/raffles", formData, {
+          method: 'POST',
+          headers: { 'Content-Type': 'multipart/form-data' },
 
-      })
-      .then((res) => console.log('Successfuly Sent!'))
-      .catch((err) => {
-        console.log(err);
-      });
+        })
+        .then((res) => console.log('Successfuly Sent!'))
+        .catch((err) => {
+          console.log(err);
+        });
+        alert("Raffle is Added!");
+    }else{
+      alert ("Failed to add!");
+    }
   }
   const onSubmitHandlers = (e) => {
 
@@ -90,6 +98,8 @@ export default function AddRaffles() {
     formData.append("desc", desc)
     e.preventDefault();
 
+
+    if (window.confirm("Are you sure you want to add this raffle ?")) {
     axios
       .put(`http://localhost:8080/raffles/${location.state.id}`, formData, {
 
@@ -101,7 +111,13 @@ export default function AddRaffles() {
 
         console.log(err);
       });
+      alert("Raffle is Updated");
   }
+ else {
+  alert("You must update the image!")
+ }
+
+}
 
   const fetchRaffles = async () => {
     await fetch(`http://localhost:8080/get/${id || location.state.id}`, {
@@ -186,7 +202,7 @@ export default function AddRaffles() {
               <img src="../images/logo.png" />
             </div>
             <div class="form" encType="multipart/from-data">
-            <label for="Start Date" className="start_end">Raffle Name</label>
+              <label for="Start Date" className="start_end">Raffle Name</label>
               <input type="text" class="form-field animation a3" placeholder="Raffle Name" value={name} onChange={(e) => setName(e.target.value)} required />
               <label for="Start Date" className="start_end">Image</label>
               <input type="file" class="form-field animation a4" onChange={onChangeFile} required />
@@ -202,7 +218,7 @@ export default function AddRaffles() {
 
                 {/* <input type="submit" value="EDIT" className="btn" onClick={onSubmitHandlers} />
                 <input type="submit" value="BACK" className="btn" onClick={getBack} /> */}
-                <button type="submit" className="btn" onClick={onSubmitHandler}>SAVE</button>
+                <button type="submit" className="btn" onClick={onSubmitHandlers}>SAVE</button>
                 <button type="submit" className="btn" onClick={getBack}>BACK</button>
               </div>
             </div>
