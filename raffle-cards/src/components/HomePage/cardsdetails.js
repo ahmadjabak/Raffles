@@ -17,6 +17,7 @@ export default function Detailedcards(props) {
   const [data1, setData1] = useState([])
   const [name, setName] = useState('');
   const [loading, setLoading] = useState(true);
+  const [page, setPage] =useState(3);
   useEffect(() => {
     fetch("http://localhost:8080/raffles", {
       method: 'GET',
@@ -50,6 +51,14 @@ export default function Detailedcards(props) {
       }).then(data1 => {
         setData1(data1)
       })
+  }
+
+  const showRaffles = ()=>{
+    let theRaffles = document.getElementById("hideit");
+    setPage((prevValue)=>prevValue + 3);
+    if(page >=data.length){
+      theRaffles.style.visibility= "hidden";
+    }
   }
   
   console.log(data);
@@ -93,11 +102,12 @@ export default function Detailedcards(props) {
         <div className="detailed-cards-container">
 
           {
-            data.map((datas) =>
+            data.slice(0,page).map((datas) =>
               <HomePageCards id={datas._id} desc={datas.desc} price={datas.price} img={datas.image} name={datas.name} start={datas.startdate} end={datas.endate} />,
 
             )
           }
+          <button onClick={showRaffles} id="hideit">Show More</button>
 
         </div>
       }

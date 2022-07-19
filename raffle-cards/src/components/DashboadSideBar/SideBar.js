@@ -50,7 +50,7 @@ export default function DashboardSideBar() {
                         <ul>
                             <li class="selected"><span class="span1"><AiOutlineHome /></span><label>Raffles</label></li>
                             <Link to="/addraffles"><li class="unSelected"><span class="span1"> <ImTicket /></span><label>Add Raffles</label></li></Link>
-                            <Link to="/contactadmin"> <li class="unSelected"><span class="span1"> <FaRegAddressCard /></span><label>Contact Us <mark className="not">{data}</mark></label></li></Link>
+                            <Link to="/contactadmin"> <li class="unSelected notif"><span class="span1"> <FaRegAddressCard /></span><label>Contact Us <mark className="not">{data}</mark></label></li></Link>
                             <Link to="/profile"> <li class="unSelected"><span class="span1"> <CgProfile /></span><label>Admin</label></li> </Link>
                         </ul> <span class="cross-icon"><i class="fas fa-times"></i></span>
                     </div>

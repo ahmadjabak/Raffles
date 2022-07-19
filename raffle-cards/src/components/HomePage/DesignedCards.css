@@ -134,6 +134,11 @@
     text-align: center;
     padding: 35px;
     margin: 50px;
+    box-shadow: 0 10px 20px 0 rgba(30, 30, 30, .07);
+}
+.flex-child:hover{
+    border: 2px solid white;
+    box-shadow: 0 20px 50px #32be8f;
 }
 
 .imageCard {

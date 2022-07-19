@@ -4,7 +4,14 @@ import ticket from "../images/download.png"
 import "./homepagecards.css";
 import { FaTicketAlt } from "react-icons/fa"
 
-export default function HomePageCards({ img, price, name, start, end, id,desc }) {
+
+export default function HomePageCards({ img, price, name, start, end, id, desc }) {
+
+    const AlertButt = () => {
+        if (window.confirm("Are you sure you want to buy this card ?")) {
+            alert("Successfuly Purchased!");
+        }
+    }
     return (
         <div class="carousel-item ">
             <div class="carousel-item-inner">
@@ -18,7 +25,7 @@ export default function HomePageCards({ img, price, name, start, end, id,desc })
                                 <p>{id}</p>
                             </div>
                             <div class="side">
-                            <span class="spanCard"><FaTicketAlt /></span> 
+                                <span class="spanCard"><FaTicketAlt /></span>
                                 <span>{price}$</span>
                             </div>
                         </div>
@@ -34,17 +41,17 @@ export default function HomePageCards({ img, price, name, start, end, id,desc })
                         <p>Start Date: {start}</p>
                         <p>End Date: {end}</p>
                     </div>
-                
 
-                
+
+
                 </div>
                 <div class="carousel-item-back">
-                    
+
                     <h1>Description:</h1>
-                <p>{desc}</p>
+                    <p>{desc}</p>
+                </div>
             </div>
-            </div>
-            <button >BUY TICKETS NOW</button> 
+            <button onClick={AlertButt}>BUY TICKETS NOW</button>
 
         </div>
     )

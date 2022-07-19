@@ -1,9 +1,9 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700,300);
 
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,300);
 
 .back {
 
-    height: 158vh;
+    height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column-reverse;
@@ -22,12 +22,9 @@
 }
 
 
-.start_end{
-    color: #32be8f;
-    margin-top: 29px;
-    margin-bottom: -25px;
-}
+
 .container1 {
+    margin-top: 35%;
     background: white;
     display: flex;
     justify-content: center;
@@ -35,7 +32,7 @@
     width: 50%;
     border: 1px solid #46464C;
     border-radius: 3px;
-    padding: 10px;
+    padding: 40px;
     box-shadow: 1px 3px rgb(169, 171, 174);
 }
 
@@ -94,8 +91,8 @@ legend {
 .image-dash img {
 
     background: #fff;
-    // width: 200px;
-    // height: 200px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     margin: 0 auto 40px;
     display: block;
@@ -116,14 +113,17 @@ legend {
 
     visibility: hidden;
 }
-
 .form .save input {
     text-align: center;
     padding-bottom: 0;
     padding-top: 20px;
 
 }
-
+.start_end{
+         color: #32be8f;
+         margin-top: 29px;
+         margin-bottom: -25px;
+     }
 .btn {
 
     border: none;
@@ -131,21 +131,11 @@ legend {
     color: white;
     font-size: 20px;
     border-radius: 3px;
-
-
+    padding: 12px 50px;
+    cursor: pointer;
 }
 
 .form input {
-    border: none;
-    border-bottom: 1px solid #6B6C70;
-    display: block;
-    width: 100%;
-    padding: 10px 0;
-    font: 16px 'Helvetica Neue', Helvetica, sans-serif;
-    color: #A64C41;
-}
-
-.form textarea {
     border: none;
     border-bottom: 1px solid #6B6C70;
     display: block;
