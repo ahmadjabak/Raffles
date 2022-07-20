@@ -1,5 +1,20 @@
+.not{
+  position: absolute;
+  top: 5px;
+  right: 38px;
+  width: 25px;
+  height: 25px;
+  background-color: red;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+
 .headers {
-  background-color: #ffffff;
+ background-color: white;
   height: max-content;
   padding: 10px;
   display: flex;
@@ -42,6 +57,7 @@
   justify-content: center;
   align-items: center;
   z-index: 6969;
+ 
 }
 
 .sidebar-dash {
@@ -58,11 +74,13 @@
 .mcd-menu {
   list-style: none;
   padding: 0;
-  background: #FFF;
+  margin-top: 50px;
+  /* background: #f7f7f7; */
   border-radius: 2px;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   width: 250px;
+  position: fixed;
 }
 
 .mcd-menu li {
@@ -224,6 +242,7 @@
     justify-content: center;
   }
 .mcd-menu {
+  position: relative;
   display: flex;
   justify-content: space-evenly;
 }

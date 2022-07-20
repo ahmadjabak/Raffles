@@ -1,6 +1,6 @@
 .dash-raffle {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 0.6fr 2fr;
 
 }
 
@@ -13,7 +13,8 @@
 }
 
 .add-raffles {
-    margin-top: 15%;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
 @media screen and (max-width: 959px) {

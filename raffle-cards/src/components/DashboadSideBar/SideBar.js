@@ -70,6 +70,7 @@ export default function DashboardSideBar() {
                             <i className="span1"><FaRegAddressCard /></i>
                             <strong>Contact Us</strong>
                             <small>View</small>
+                            <mark className="not">{data}</mark>
                         </Link>
                     </li>
                     </div>
