@@ -3,8 +3,9 @@ import axios from "axios";
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import "./addraffles.scss"
-import e from "cors";
-import LoadingPage from "../LoadingPage/LoadingPage";
+import './addRafflesHeader.css'
+
+import { MdOutlineKeyboardBackspace } from "react-icons/md"
 
 
 export default function AddRaffles() {
@@ -19,7 +20,6 @@ export default function AddRaffles() {
   const [start, setStart] = useState('');
   const [end, setEnd] = useState('');
   const [desc, setDesc] = useState('');
-  const [loading, setLoading] = useState(true);
 
   const onChangeFile = e => {
 
@@ -82,9 +82,9 @@ export default function AddRaffles() {
         .catch((err) => {
           console.log(err);
         });
-        alert("Raffle is Added!");
-    }else{
-      alert ("Failed to add!");
+      alert("Raffle is Added!");
+    } else {
+      alert("Failed to add!");
     }
   }
   const onSubmitHandlers = (e) => {
@@ -100,24 +100,24 @@ export default function AddRaffles() {
 
 
     if (window.confirm("Are you sure you want to add this raffle ?")) {
-    axios
-      .put(`http://localhost:8080/raffles/${location.state.id}`, formData, {
+      axios
+        .put(`http://localhost:8080/raffles/${location.state.id}`, formData, {
 
-        headers: { 'Content-Type': 'multipart/form-data' },
+          headers: { 'Content-Type': 'multipart/form-data' },
 
-      })
-      .then((res) => console.log('Successfuly Sent!'))
-      .catch((err) => {
+        })
+        .then((res) => console.log('Successfuly Sent!'))
+        .catch((err) => {
 
-        console.log(err);
-      });
+          console.log(err);
+        });
       alert("Raffle is Updated");
-  }
- else {
-  alert("You must update the image!")
- }
+    }
+    else {
+      alert("You must update the image!")
+    }
 
-}
+  }
 
   const fetchRaffles = async () => {
     await fetch(`http://localhost:8080/get/${id || location.state.id}`, {
@@ -148,17 +148,17 @@ export default function AddRaffles() {
     fetchRaffles()
     console.log(data)
   }, [])
-
-  // if (loading) return <LoadingPage />;
+  function thenav() {
+    navigate('/raffles');
+  }
   if (id === null) {
     return (
 
       <div class="back">
         <div class="container1">
+
           <div class="left">
-            <div class="image-dash">
-              <img src="../images/logo.png" />
-            </div>
+            
 
 
             <div class="form" encType="multipart/from-data">
@@ -176,7 +176,6 @@ export default function AddRaffles() {
               <div class="save">
                 <div>
                   <button type="submit" className="btn" onClick={onSubmitHandler}>ADD</button>
-                  <button type="submit" className="btn" onClick={getBack}>BACK</button>
                 </div>
               </div>
 
@@ -198,9 +197,6 @@ export default function AddRaffles() {
         </div>
         <div class="container1">
           <div class="left">
-            <div class="image-dash">
-              <img src="../images/logo.png" />
-            </div>
             <div class="form" encType="multipart/from-data">
               <label for="Start Date" className="start_end">Raffle Name</label>
               <input type="text" class="form-field animation a3" placeholder="Raffle Name" value={name} onChange={(e) => setName(e.target.value)} required />
@@ -215,17 +211,16 @@ export default function AddRaffles() {
               <label for="Start Date" className="start_end">Message</label>
               <textarea type="text" class="form-field animation a4" placeholder="Description" value={desc} onChange={(e) => { setDesc(e.target.value) }} required />
               <div class="save">
-
-                {/* <input type="submit" value="EDIT" className="btn" onClick={onSubmitHandlers} />
-                <input type="submit" value="BACK" className="btn" onClick={getBack} /> */}
                 <button type="submit" className="btn" onClick={onSubmitHandlers}>SAVE</button>
-                <button type="submit" className="btn" onClick={getBack}>BACK</button>
+
               </div>
             </div>
           </div>
         </div>
       </div>
+
     )
+
   }
 
 }

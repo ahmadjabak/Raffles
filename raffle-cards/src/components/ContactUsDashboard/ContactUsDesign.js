@@ -81,7 +81,7 @@ export default function ContactUsDesign({ id }) {
 
   return (
     <div>
-      <HeaderContact />
+    
       <form className="formContact">
         <table className="table">
           <thead>
