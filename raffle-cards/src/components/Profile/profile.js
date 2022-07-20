@@ -51,20 +51,7 @@ function Profile() {
         }
         else if (password === confirm) {
             if(window.confirm('Are you sure you want to change your profile information?')){
-    // confirmAlert({
-    //             title: 'Confirm to submit',
-    //             message: 'Are you sure to do this.',
-    //             buttons: [
-    //               {
-    //                 label: 'Yes',
-    //                 onClick: () => alert('Click Yes')
-    //               },
-    //               {
-    //                 label: 'No',
-    //                 onClick: () => alert('Click No')
-    //               }
-    //             ]
-    //           });
+ 
             e.preventDefault();
             
             fetch(`http://localhost:8080/profile?username=${username}&password=${password}`, {
@@ -85,16 +72,11 @@ function Profile() {
                     navigate('/raffles');
                 })
         }
-
-        else {
-            alert('Password is not Matched')
-        }
     }
     }
     
     return (
         <div class="panel">
-            <img className="panelavatar" src={Logo} />
             <form class="inputs">
                 <div class="inputsitem">
                     <label for="new-username" className="inputslabel">New Username</label>
@@ -107,7 +89,6 @@ function Profile() {
 
                 <div class="inputsitem inputsitem--cta">
                     <button type="submit" className="btn"  onClick={onSubmitHandler} >Reset</button>
-                    <button type="submit" onClick={thenav} className="btn" >Back</button>
                 </div>
             </form>
         </div>

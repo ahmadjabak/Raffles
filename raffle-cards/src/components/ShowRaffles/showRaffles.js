@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import "./show.scss";
 import DashboardSideBar from '../DashboadSideBar/SideBar';
 import AddRaffles from "../AddRaffles/addRaffles";
+import HeaderSideBar from '../DashboadSideBar/HeaderSideBar';
 export default function ShowRaffles(props) {
   const [data, setData] = useState([]);
   const [data1, setData1] = useState([]);
@@ -47,7 +48,7 @@ export default function ShowRaffles(props) {
   }
   return (
     <div>
-     
+    
       <form class="search" action="" onSubmit={onSubmitHandler}>
         <input type="search" placeholder="Search here..." onChange={(e) => onSubmitHandler(e, e.target.value)}/>
       </form>

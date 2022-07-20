@@ -5,22 +5,19 @@
     padding: 200px;
 } */
 
-.iconDesign{
+.iconDesign {
     color: #32be8f;
 }
 
-.iconDesign:hover{
+.iconDesign:hover {
     color: red;
 }
 
 .table {
     position: absolute;
-    z-index: 2;
-    left: 50%;
+
     top: 30%;
-    transform: translate(-50%, -50%);
-    width: 60%;
-    border-collapse: collapse;
+
     border-spacing: 0;
     box-shadow: 0 2px 15px rgba(64, 64, 64, .7);
     border-radius: 12px 12px 0 0;
@@ -30,7 +27,7 @@
 
 td,
 th {
-    padding: 15px 30px;
+    padding: 10px 20px;
     text-align: center;
 }
 
@@ -43,12 +40,14 @@ th {
     white-space: nowrap;
 
 }
-.border{
+
+.border {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
 }
+
 tr {
     width: 100%;
     background-color: #fafafa;
@@ -61,50 +60,78 @@ tr:nth-child(even) {
 
 
 @media only screen and (max-width: 760px),
-(min-device-width: 768px) and (max-device-width: 1024px)  {
+(min-device-width: 768px) and (max-device-width: 1024px) {
 
     .table{
         margin-top: 25%;
-        margin-left: -10%;
+      
 
     }
-    table, thead, tbody, th, td, tr { 
-        display: block; 
-}
-/* Section four*/
-thead tr { 
-        position: absolute;
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+    }
+
+    thead tr {
+
         top: -9999px;
         left: -9999px;
-}
+    }
 
-tr { border-bottom: 1px solid #ccc; }
-/* Section five*/
-td { 
-     border: none;
-     border-bottom: 1px solid #eee; 
-     position: relative;
-     padding-left: 50%; 
-}
-td:before { 
-        position: absolute;
+    tr {
+        border-bottom: 1px solid #ccc;
+    }
+
+    td {
+        border: none;
+        border-bottom: 1px solid #eee;
+
+        padding-left: 50%;
+    }
+
+    td:before {
+
         top: 3px;
         left: 6px;
-        width: auto; 
-        padding-right: 10px; 
+        width: auto;
+        padding-right: 10px;
         white-space: nowrap;
         font-weight: bold;
         color: #32be8f;
-}
-/* Section six*/
+    }
 
-td:nth-of-type(1):before { content: "FIRST NAME"; }
-td:nth-of-type(2):before { content: "LAST NAME"; }
-td:nth-of-type(3):before { content: "PHONE NUMBER"; }
-td:nth-of-type(4):before { content: "EMAIL"; }
-td:nth-of-type(5):before { content: "DATE"; }
-td:nth-of-type(6):before { content: "MESSAGE"; }
-td:nth-of-type(7):before { content: "ACTION"; }
+
+    td:nth-of-type(1):before {
+        content: "FIRST NAME";
+    }
+
+    td:nth-of-type(2):before {
+        content: "LAST NAME";
+    }
+
+    td:nth-of-type(3):before {
+        content: "PHONE NUMBER";
+    }
+
+    td:nth-of-type(4):before {
+        content: "EMAIL";
+    }
+
+    td:nth-of-type(5):before {
+        content: "DATE";
+    }
+
+    td:nth-of-type(6):before {
+        content: "MESSAGE";
+    }
+
+    td:nth-of-type(7):before {
+        content: "ACTION";
+    }
 
 
 

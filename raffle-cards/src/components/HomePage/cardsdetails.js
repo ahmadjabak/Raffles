@@ -74,15 +74,15 @@ export default function Detailedcards(props) {
         Find something memorable, join a community doing good.
       </h1>
       <div className="searchHome">
+      
         <p className="pCard">Search for a Raffle Card</p>
+        
         <div class="boxHome">
           <form name="search">
             <input type="text" class="inputHome" name="txt" onChange={(e) => onSubmitHandler(e, e.target.value)} onmouseout="this.value = ''; this.blur();" />
           </form>
-          <i class="fas fa-search"> <AiOutlineSearch /></i>
-
-        </div>
-
+         
+        </div> 
       </div>
 
       {(data1.length > 0) ?

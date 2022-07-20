@@ -4,19 +4,28 @@ a {
     text-decoration: none;
 }
 
-.li {
+/* li {
     list-style: none;
-}
+} */
 
-.navbar {
-    display: flex;
+.backContact{
+    font-size: 3.5rem;
+    color: #32be8f;
+}
+.navbarrr {
+  
+    width: 0%;
+    /* display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #666;
+    background-color: white;
     font: bold 15px sans-serif;
     color: #fff;
-    padding: 0px 90px;
-    z-index: 6969;
+    padding: 0px 50px;
+    position: fixed;
+    top: 0%;
+    width:90%;
+    z-index: 6969; */
 }
 
 .nav-links a {

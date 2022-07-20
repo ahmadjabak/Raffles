@@ -81,7 +81,7 @@ export default function ContactUsDesign({ id }) {
 
   return (
     <div>
-      <HeaderContact />
+    
       <form className="formContact">
         <table className="table">
           <thead>
@@ -102,13 +102,13 @@ export default function ContactUsDesign({ id }) {
               <tbody>
                 <tr>
 
-                  <td>{datas.fname}</td>
-                  <td>{datas.lname}</td>
-                  <td>{datas.phonenumber}</td>
-                  <td>{datas.email}</td>
-                  <td>{datas.time}</td>
-                  <td>{datas.message}</td>
-                  <td onClick={() => onSubmitHandler(datas._id)} className="iconDesign"><RiDeleteBin5Line /></td>
+                  <td data-lable="First Name">{datas.fname}</td>
+                  <td data-lable="Last Name">{datas.lname}</td>
+                  <td data-lable="Phone Number">{datas.phonenumber}</td>
+                  <td data-lable="Email">{datas.email}</td>
+                  <td data-lable="Date">{datas.time}</td>
+                  <td data-lable="Message">{datas.message}</td>
+                  <td data-lable="Action" onClick={() => onSubmitHandler(datas._id)} className="iconDesign"><RiDeleteBin5Line /></td>
                 </tr>
               </tbody>
             )

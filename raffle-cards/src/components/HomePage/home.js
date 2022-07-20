@@ -22,8 +22,9 @@ export default function Home() {
           <h4>&mdash; Raffle<span>Box</span></h4>
         </div>
       </div>
+     
       <ImageSlider />
-
+    
     </div>
   )
 }

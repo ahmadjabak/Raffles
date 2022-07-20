@@ -32,7 +32,6 @@ export default function Login() {
         setData(data)
         if (data.admin) {
           localStorage.setItem('token', data.admin)
-          alert('Login Succesful!')
             navigate('/raffles',);
           
         } else {

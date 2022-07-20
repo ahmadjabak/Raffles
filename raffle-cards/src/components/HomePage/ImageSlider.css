@@ -221,7 +221,7 @@ label span {
 	transition: .3s;
 }
  */
-@media screen and (max-width: 685px) {
+@media screen and (max-width: 1000px) {
     .containerr {
         border: none;
         width: 100%;
