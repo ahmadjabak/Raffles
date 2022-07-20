@@ -39,13 +39,14 @@ export default function DashboardSideBar() {
     // if (loading) return <LoadingPage />;
 
     return (
-      
+
         <div className='sidebar-dash'>
 
             <div class="containerRr">
 
 
                 <ul class="mcd-menu">
+                    <div>
                     <li>
                         <Link to="/raffles" class="active">
                             <i class="span1" ><AiOutlineHome /></i>
@@ -53,7 +54,8 @@ export default function DashboardSideBar() {
                             <small>View Raffles</small>
                         </Link>
                     </li>
-
+                    </div>
+                    <div>
                     <li>
                         <Link to="/addraffles" >
                             <i className="span1"><ImTicket /></i>
@@ -61,7 +63,8 @@ export default function DashboardSideBar() {
                             <small>New</small>
                         </Link>
                     </li>
-
+                    </div>
+                    <div>
                     <li>
                         <Link to="/contactadmin" >
                             <i className="span1"><FaRegAddressCard /></i>
@@ -69,7 +72,8 @@ export default function DashboardSideBar() {
                             <small>View</small>
                         </Link>
                     </li>
-
+                    </div>
+                    <div>
                     <li>
                         <Link to="/profile" >
                             <i className="span1"><CgProfile /></i>
@@ -77,6 +81,7 @@ export default function DashboardSideBar() {
                             <small>Edit</small>
                         </Link>
                     </li>
+                    </div>
                 </ul>
             </div>
 

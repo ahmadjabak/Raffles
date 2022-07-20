@@ -6,13 +6,13 @@ import './admindash.css'
 function AdminDash() {
   return (
     <div>
-      <  HeaderSideBar className="header-dash"/>
+      <  HeaderSideBar className="header-dash" />
       <div className="dash-raffle">
-        <div >
-            <DashboardSideBar/>
+        <div className='admin-dash'>
+        <DashboardSideBar />
         </div>
         <div className='show-raffles'>
-            <ShowRaffles/>
+          <ShowRaffles />
         </div>
       </div>
     </div>

@@ -10,7 +10,7 @@ export default function HeaderSideBar() {
     }
   return (
     <div className='header_dash'>
-        <header>
+        <div className='headers'>
             <div class="menu-button" id='desktop'>
                 <div></div>
                 <div></div>
@@ -20,7 +20,7 @@ export default function HeaderSideBar() {
                 <a href="#"><img class="imgLogo" src={Logo} /></a>
                 <h1>RaffleBox <span class="spanH">Dashboard</span></h1></div>
             <Link to="/login"><div class="iconnn" onClick={onSubmit}> <BiLogOut /></div></Link>
-        </header>
+        </div>
     </div>
   )
 }
