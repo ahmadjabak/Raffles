@@ -1,5 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+/* //////////////////////////////////////////////////////////////////// */
 
+/* .not{
+  
+  
+  
+  width: 25px;
+  height: 25px;
+  background-color: red;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+} */
+
+
+
+/* ///////////////////////////////////////////////////////////////// */
 .sideBar ul {
   margin: 0;
   padding: 0;
@@ -8,7 +26,30 @@
 
 }
 
+.notif {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
 
+.notif label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 10vw;
+}
+
+.notif .not {
+  border-radius: 50%;
+  background-color: red;
+  color: #fff;
+  text-align: center;
+  width: 25px;
+  height: 25px;
+  margin-bottom: 10px;
+  
+}
 
 .bodySideBar {
   background-color: #eff2f5;
@@ -181,10 +222,11 @@ header h1 {
 }
 
 
-.icon {
+.iconnn {
   font-size: 2.5rem;
-  margin-top: 15px;
- 
+  color: #32be8f;
+  /* margin-top: 15px;
+ display: block; */
 }
 .spanH{
   color: #32be8f;
@@ -193,6 +235,7 @@ header h1 {
 .span1{
   font-size: 1.5rem;
   margin-right: 10px;
+  color: white;
 }
 
 @media(max-width:1200px) {
@@ -211,10 +254,11 @@ header h1 {
   }
 
   .sideBar {
-    position: absolute;
-    width: 30%;
+    /* position: absolute;
+    
     top: 0;
-    left: -100%;
+    left: -100%; */
+    width: 20%;
   }
 
   .sideBar .cross-icon {

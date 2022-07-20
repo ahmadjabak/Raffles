@@ -20,6 +20,8 @@ export default function ContactUs() {
   const time = date;
 
   const Submit = (e) => {
+
+
     e.preventDefault();
     const newMsg = {
       fname,
@@ -30,77 +32,31 @@ export default function ContactUs() {
       message
     };
 
+    if (!fname || !lname || !email || !message || fname === " " || lname === " " || email === " " || message === " ") {
+    } else {
+      fetch(`http://localhost:8080/contactus?fname=${fname}&lname=${lname}&phonenumber=${phonenumber}&email=${email}&time=${time}&message=${message}`, {
+        method: 'POST',
+        headers: { "Contact-Type": "application/json" }
 
-    fetch(`http://localhost:8080/contactus?fname=${fname}&lname=${lname}&phonenumber=${phonenumber}&email=${email}&time=${time}&message=${message}`, {
-      method: 'POST',
-      headers: { "Contact-Type": "application/json" },
 
-    }).then(() => {
-    return alert('Successfuly Sent!'),
-      setLname(''),
-      setFname(''),
-      setEmail(''),
-      setPhonenumber(''),
-      setMessage('');
-    });
+      }).then((res) => {
+        console.log("Deleted", res)
+      })
+    }
 
   }
 
+  function showAlert() {
+    if (!fname || !lname || !email || !message || fname === " " || lname === " " || email === " " || message === " ") {
+      alert("Please fill all the required fields!");
+    } else {
+      alert("Message Sent!");
+      window.location.reload()
+    }
+  }
   return (
     <div>
       <Header />
-      {/* <ContactDesgin />
-      <div class="card">
-        <h2>Contact Us</h2>
-        <form class="row" onSubmit={Submit}>
-          <div class="frist">
-            <div class="col">
-              <div class="form-group">
-                <label>First Name</label>
-                <input type="text" required value={fname} onChange={(e) => setFname(e.target.value)} />
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="form-group">
-                <label>Last name</label>
-                <input type="text" required value={lname} onChange={(e) => setLname(e.target.value)} />
-              </div>
-            </div>
-          </div>
-          <div class="second">
-            <div class="col">
-              <div class="form-group">
-                <label>Email</label>
-                <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} />
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="form-group">
-                <label>Phone Number</label>
-                <input type="text" required value={phonenumber} onChange={(e) => setPhonenumber(e.target.value)} />
-              </div>
-            </div>
-          </div>
-          <div class="third">
-            <div class="col">
-              <div class="form-group">
-                <label>Message</label>
-                <input type="text" required value={message} onChange={(e) => setMessage(e.target.value)} />
-              </div>
-            </div>
-          </div>
-          <div class="forth">
-
-            <div class="col">
-              <div class="form-group">
-                <input type="submit" value="Submit" />
-              </div>
-            </div>
-          </div>
-        </form>
-      </div> */}
       <body className="bodytry">
         <div class="containerR">
           <div class="form-containerR">
@@ -118,21 +74,21 @@ export default function ContactUs() {
                   <h2 class="lg-view">Contact Us</h2>
                   <h2 class="sm-view">Let's Chat</h2>
 
-                  <input type="text" placeholder="First Name" required  value={fname} onChange={(e) => setFname(e.target.value)} />
-             
-                  <input type="text" placeholder="Second Name" required value={lname} onChange={(e) => setLname(e.target.value)}/>
+                  <input type="text" placeholder="First Name" required value={fname} onChange={(e) => setFname(e.target.value)} />
+
+                  <input type="text" placeholder="Second Name" required value={lname} onChange={(e) => setLname(e.target.value)} />
                   <input type="phone" placeholder="Phone" required value={phonenumber} onChange={(e) => setPhonenumber(e.target.value)} />
-                  <input type="email" placeholder="Email" required value={email} onChange={(e) => setEmail(e.target.value)}  />
-                
+                  <input type="email" placeholder="Email" required value={email} onChange={(e) => setEmail(e.target.value)} />
+
                   <textarea rows="4" placeholder="Message" required value={message} onChange={(e) => setMessage(e.target.value)}  ></textarea>
-                  <button type="submit" value="Submit">Submit</button>
+                  <button type="submit" value="Submit" onClick={showAlert}>Submit</button>
                 </form>
               </div>
             </div>
           </div>
         </div>
-        </body>
-        <Footer />
+      </body>
+      <Footer />
     </div>
   )
 }

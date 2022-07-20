@@ -5,7 +5,7 @@ router.use(express.json());
 const ObjectId = require("mongodb").ObjectId;
 var raffles = require("../schema/Raffles")
 router.get('/',(req, res) => {
-    raffles.find(({name: req.query.name}), (err, val) => {
+    raffles.find(({name: {$regex:req.query.name}}), (err, val) => {
         if(val){
             res.json(val);
         }

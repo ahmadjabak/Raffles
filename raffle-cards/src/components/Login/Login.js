@@ -5,6 +5,8 @@ import Logo from '../images/logo.png'
 import bg from '../images/bg.svg'
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from "react-router-dom";
+import { AiFillEyeInvisible } from "react-icons/ai";
+import { AiFillEye } from "react-icons/ai";
 export default function Login() {
   const [username, setUser] = useState('');
   const [password, setPassword] = useState('');
@@ -30,7 +32,7 @@ export default function Login() {
         setData(data)
         if (data.admin) {
           localStorage.setItem('token', data.admin)
-
+          alert('Login Succesful!')
             navigate('/raffles',);
           
         } else {
@@ -46,6 +48,22 @@ export default function Login() {
       navigate('/raffles');
     }
   })
+
+
+  
+  function showeye() {
+  const toggle = document.querySelector(".toggle"),
+        input = document.querySelector(".input");
+
+        toggle.addEventListener("click", () =>{
+            if(input.type ==="password"){
+              input.type = "text";
+              toggle.classList.replace(<AiFillEyeInvisible/>, <AiFillEye/>);
+            }else{
+              input.type = "password";
+            }
+        })
+      }
   return (
     <div>
       <body>
@@ -74,8 +92,10 @@ export default function Login() {
                 <div class="div">
                   {/* <h5>Password</h5> */}
                   <input placeholder="Password" type="password" class="input" value={password} onChange={(e) => { setPassword(e.target.value) }}></input>
+                  
                 </div>
               </div>
+              {/* <button onClick={()=>{showeye()}} className="toggle"><AiFillEyeInvisible/></button> */}
               <input type="submit" class="btn" value="Login" onClick={onSubmitHandler}></input>
             </form>
           </div>

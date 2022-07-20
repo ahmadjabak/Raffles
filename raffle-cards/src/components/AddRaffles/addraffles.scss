@@ -1,3 +1,4 @@
+
 @import url(https://fonts.googleapis.com/css?family=Lato:400,700,300);
 
 .back {
@@ -23,6 +24,7 @@
 
 
 .container1 {
+    margin-top: 35%;
     background: white;
     display: flex;
     justify-content: center;
@@ -111,14 +113,17 @@ legend {
 
     visibility: hidden;
 }
-
 .form .save input {
     text-align: center;
     padding-bottom: 0;
     padding-top: 20px;
 
 }
-
+.start_end{
+         color: #32be8f;
+         margin-top: 29px;
+         margin-bottom: -25px;
+     }
 .btn {
 
     border: none;
@@ -126,8 +131,8 @@ legend {
     color: white;
     font-size: 20px;
     border-radius: 3px;
-   
-   
+    padding: 12px 50px;
+    cursor: pointer;
 }
 
 .form input {
@@ -138,15 +143,6 @@ legend {
     padding: 10px 0;
     font: 16px 'Helvetica Neue', Helvetica, sans-serif;
     color: #A64C41;
-}
-.form textarea{
-    border: none;
-    border-bottom: 1px solid #6B6C70;
-    display: block;
-    width: 100%;
-    padding: 10px 0;
-    font: 16px 'Helvetica Neue', Helvetica, sans-serif;
-    color: #A64C41; 
 }
 
 .animation {
