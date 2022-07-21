@@ -24,7 +24,7 @@ function Profile() {
         }
     }
     const onChangeFile = e => {
-        setImage(URL.createObjectURL(e.target.files[0]));
+        setImage((e.target.files[0]));
     }
 
     useEffect(() => {
