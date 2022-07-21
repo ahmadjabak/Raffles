@@ -1,15 +1,13 @@
 import React, { useState } from "react"
-import Logo from '../images/logo.png'
+
 
 import "./Contact.scss"
 import Footer from "../Footer/Footer"
 import Header from "../Header/Header"
-import ContactDesgin from "./ContactUsPageDesign"
-import { set } from "mongoose"
+
 export default function ContactUs() {
 
-  // const [data, setData]= useState(null);
-  // const [error, setError]= useState(null);
+ 
   const [fname, setFname] = useState('');
   const [lname, setLname] = useState('');
   const [phonenumber, setPhonenumber] = useState('');

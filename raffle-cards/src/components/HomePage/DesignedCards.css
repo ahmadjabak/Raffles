@@ -16,11 +16,7 @@
     transition: .5s;
 }
 
-/* .boxHome input:focus{
-    width: 350px;
-    background:  white;
-    border-radius: 10px;
-} */
+
 .boxHome i {
     position: absolute;
     top: 55%;
@@ -43,14 +39,7 @@
 
 }
 
-/* .searchh {
-    width: 400px;
-    height: 40px;
-    background: #444;
-    background: rgba(0, 0, 0, .2);
-    border-radius: 300px;
-    border: 1px solid #fff;
-} */
+
 
 .inputt {
     width: 370px;
@@ -82,15 +71,7 @@
     
 }
 
-/* .h1carddetails {
-    text-align: center;
-    padding: 20px;
-    text-align: center;
-    background: #F7F7F7;
-    color: black;
-    font-size: 30px;
-    font-weight: 200;
-} */
+
 
 
 .flex-container {

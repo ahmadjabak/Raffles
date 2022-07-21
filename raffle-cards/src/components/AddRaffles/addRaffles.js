@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import "./addraffles.scss"
 import './addRafflesHeader.css'
 
-import { MdOutlineKeyboardBackspace } from "react-icons/md"
+
 
 
 export default function AddRaffles() {

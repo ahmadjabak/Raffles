@@ -1,10 +1,10 @@
 import logo from "../images/logo.png"
-import ticket from "../images/download.png"
+
 import { FaTicketAlt } from "react-icons/fa"
 import "../HomePage/homepagecards.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from 'react';
-import AddRaffles from "../AddRaffles/addRaffles";
+
 
 export default function AdminCards({ img, price, name, start, end, id,desc }) {
   const navigate = useNavigate();

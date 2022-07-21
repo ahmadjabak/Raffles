@@ -11,7 +11,6 @@ export default function Login() {
   const [username, setUser] = useState('');
   const [password, setPassword] = useState('');
   const [data, setData] = useState([]);
-  const [data1, setData1] = useState([]);
   const navigate = useNavigate();
   const onSubmitHandler = (e) => {
     const msg = { username, password };

@@ -1,22 +1,21 @@
 import HomePageCards from './HomePageCards';
-import luffy from "../images/luffy.jpg"
+
 import Header from "../Header/Header"
 import Footer from "../Footer/Footer"
 import Home from "./home.js"
 import DesignedCards from './DesignedCards';
 import './ImageSlider.css';
 import { useState, useEffect } from 'react';
-import { AiOutlineSearch } from "react-icons/ai"
+
 import LoadingPage from "../LoadingPage/LoadingPage";
 import ScrollToTop from "react-scroll-to-top";
-import Logo from '../images/logo.png'
+
 
 
 
 export default function Detailedcards(props) {
   const [data, setData] = useState([])
   const [data1, setData1] = useState([])
-  const [name, setName] = useState('');
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(3);
   useEffect(() => {
@@ -38,7 +37,6 @@ export default function Detailedcards(props) {
   const onSubmitHandler = async (e, name) => {
     console.log(name)
     e.preventDefault();
-    // props.getData(e.target.data.name.value)
     await fetch(`http://localhost:8080/search?name=${name}`, {
       method: 'GET',
       headers: {

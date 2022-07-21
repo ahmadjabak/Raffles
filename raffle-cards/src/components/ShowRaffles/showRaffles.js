@@ -1,13 +1,11 @@
 import AdminCards from './AdminCards';
 import { useState, useEffect } from 'react';
 import "./show.scss";
-import DashboardSideBar from '../DashboadSideBar/SideBar';
-import AddRaffles from "../AddRaffles/addRaffles";
-import HeaderSideBar from '../DashboadSideBar/HeaderSideBar';
+
 export default function ShowRaffles(props) {
   const [data, setData] = useState([]);
   const [data1, setData1] = useState([]);
-  const [name, setName] = useState('');
+
   
   useEffect(() => {
     fetch("http://localhost:8080/raffles", {
@@ -31,7 +29,6 @@ export default function ShowRaffles(props) {
   const onSubmitHandler = async (e, name) => {
     console.log(name)
     e.preventDefault();
-    // props.getData(e.target.data.name.value)
     await fetch(`http://localhost:8080/search?name=${name}`, {
       method: 'GET',
       headers: {

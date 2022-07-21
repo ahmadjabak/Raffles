@@ -2,8 +2,7 @@ import React from 'react'
 import './profile.css'
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'
-import Logo from '../images/logo.png'
-import { confirmAlert } from 'react-confirm-alert';
+
 import axios from "axios";
 function Profile() {
     const [data, setData] = useState([]);

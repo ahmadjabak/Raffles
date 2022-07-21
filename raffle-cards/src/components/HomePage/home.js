@@ -1,8 +1,6 @@
 import React from 'react'
-import Pic from '../images/homedesign.png'
-import homee from './home.css'
 import ImageSlider from './ImageSlider'
-
+import './home.css'
 export default function Home() {
   return (
     <div className='whole'>

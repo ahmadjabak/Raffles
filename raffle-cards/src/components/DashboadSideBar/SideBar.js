@@ -7,9 +7,9 @@ import { AiOutlineHome } from "react-icons/ai"
 import { ImTicket } from "react-icons/im"
 import { FaRegAddressCard } from "react-icons/fa"
 import { CgProfile } from "react-icons/cg"
-import ShowRaffles from "../ShowRaffles/showRaffles";
+
 import { Link } from "react-router-dom";
-import LoadingPage from "../LoadingPage/LoadingPage";
+
 export default function DashboardSideBar() {
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(true);
@@ -36,7 +36,6 @@ export default function DashboardSideBar() {
         console.log(data)
     }, [])
 
-    // if (loading) return <LoadingPage />;
 
     const toreload=()=>{
         window.location.reload();
