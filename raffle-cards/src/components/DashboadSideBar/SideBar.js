@@ -38,6 +38,10 @@ export default function DashboardSideBar() {
 
     // if (loading) return <LoadingPage />;
 
+    const toreload=()=>{
+        window.location.reload();
+    }
+
     return (
 
         <div className='sidebar-dash'>
@@ -57,9 +61,9 @@ export default function DashboardSideBar() {
                     </div>
                     <div>
                     <li>
-                        <Link to="/addraffles" >
+                        <Link to="/addraffles">
                             <i className="span1"><ImTicket /></i>
-                            <strong>Add Raffles</strong>
+                            <strong onClick={toreload}>Add Raffles</strong>
                             <small>New</small>
                         </Link>
                     </li>
