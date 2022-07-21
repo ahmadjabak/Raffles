@@ -2,18 +2,18 @@
 import "./contactDesign.scss"
 export default function ContactDesgin() {
     return (
-        <div class="all">
-        <div class="frame">
-            <div class="circle"></div>
-            <div class="line left"></div>
-            <div class="line right"></div>
-            <div class="bracket left"></div>
-            <div class="bracket right"></div>
-            <div class="small top"><span class="first-letter">S</span>tart</div>
-            <div class="big">Contacting</div>
-            <div class="small bottom">Us <span class="first-letter">N</span>ow</div>
-            <div class="hide top"></div>
-            <div class="hide bottom"></div>
+        <div className="all">
+        <div className="frame">
+            <div className="circle"></div>
+            <div className="line left"></div>
+            <div className="line right"></div>
+            <div className="bracket left"></div>
+            <div className="bracket right"></div>
+            <div className="small top"><span className="first-letter">S</span>tart</div>
+            <div className="big">Contacting</div>
+            <div className="small bottom">Us <span className="first-letter">N</span>ow</div>
+            <div className="hide top"></div>
+            <div className="hide bottom"></div>
         </div>
         </div>
 

@@ -71,17 +71,15 @@ export default function Detailedcards(props) {
       <Home />
       <DesignedCards />
       <ScrollToTop className="icon-position icon-style" />
-      {/* <h1 className="h1carddetails">
-        Find something memorable, join a community doing good.
-      </h1> */}
+      
 
       <div className="searchHome">
 
         <p className="pCard">Search for a Raffle Card</p>
 
-        <div class="boxHome">
+        <div className="boxHome">
           <form name="search">
-            <input type="text" class="inputHome" name="txt" onChange={(e) => onSubmitHandler(e, e.target.value)} onmouseout="this.value = ''; this.blur();" />
+            <input type="text" className="inputHome" name="txt" onChange={(e) => onSubmitHandler(e, e.target.value)} />
           </form>
 
         </div>
@@ -92,8 +90,8 @@ export default function Detailedcards(props) {
         <div className="detailed-cards-container">
 
           {
-            data1.map((datas) =>
-              <HomePageCards id={datas._id} desc={datas.desc} price={datas.price} img={datas.image} name={datas.name} start={datas.startdate} end={datas.endate} />
+            data1.map((datas, index) =>
+              <HomePageCards key={index} id={datas._id} desc={datas.desc} price={datas.price} img={datas.image} name={datas.name} start={datas.startdate} end={datas.endate} />
 
 
             )

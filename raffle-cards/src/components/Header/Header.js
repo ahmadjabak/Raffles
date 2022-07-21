@@ -7,21 +7,21 @@ export default function Header() {
     return (
         <div >
             <body>
-                <nav class="navbar">
+                <nav className="navbar">
                 
                    
-                        <div class="imgB">
-                            <a href="#"><img class="imgLogo" src={Logo} /></a>
+                        <div className="imgB">
+                            <a href="#"><img className="imgLogo" src={Logo} /></a>
                             <h3 className="h3Header">Raffle<span>Box</span></h3>
                     </div>
 
 
-                    <ul class="nav-links">
+                    <ul className="nav-links">
                        
                         <input type="checkbox" id="checkbox_toggle" />
-                        <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+                        <label for="checkbox_toggle" className="hamburger">&#9776;</label>
                       
-                        <div class="menu">
+                        <div className="menu">
                             <li className="li"><Link to='/'>Home</Link></li>
                             <li className="li"><Link to="/contactus">Contact Us</Link></li>
 

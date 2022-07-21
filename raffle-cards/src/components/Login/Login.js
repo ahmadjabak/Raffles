@@ -66,36 +66,36 @@ export default function Login() {
   return (
     <div>
       <body>
-        <img class="wave" src={wave}></img>
-        <div class="container">
-          <div class="img">
+        <img className="wave" src={wave}></img>
+        <div className="container">
+          <div className="img">
             <img src={bg}></img>
           </div>
-          <div class="login-content">
+          <div className="login-content">
             <form action="index.html">
               <img src={Logo}></img>
-              <h2 class="title">Welcome</h2>
-              <div class="input-div one">
-                <div class="i">
-                  <i class="fas fa-user"></i>
+              <h2 className="title">Welcome</h2>
+              <div className="input-div one">
+                <div className="i">
+                  <i className="fas fa-user"></i>
                 </div>
-                <div class="div">
-                  {/* <h5>Username</h5> */}
-                  <input placeholder="Username" type="text" class="input" value={username} onChange={(e) => { setUser(e.target.value) }}></input>
+                <div className="div">
+                  
+                  <input placeholder="Username" type="text" className="input" value={username} onChange={(e) => { setUser(e.target.value) }}></input>
                 </div>
               </div>
-              <div class="input-div pass">
-                <div class="i">
-                  <i class="fas fa-lock"></i>
+              <div className="input-div pass">
+                <div className="i">
+                  <i className="fas fa-lock"></i>
                 </div>
-                <div class="div">
-                  {/* <h5>Password</h5> */}
-                  <input placeholder="Password" type="password" class="input" value={password} onChange={(e) => { setPassword(e.target.value) }}></input>
+                <div className="div">
+                  
+                  <input placeholder="Password" type="password" className="input" value={password} onChange={(e) => { setPassword(e.target.value) }}></input>
                   
                 </div>
               </div>
-              {/* <button onClick={()=>{showeye()}} className="toggle"><AiFillEyeInvisible/></button> */}
-              <input type="submit" class="btn" value="Login" onClick={onSubmitHandler}></input>
+              
+              <input type="submit" className="btn" value="Login" onClick={onSubmitHandler}></input>
             </form>
           </div>
         </div>

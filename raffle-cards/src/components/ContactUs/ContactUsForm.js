@@ -58,21 +58,21 @@ export default function ContactUs() {
     <div>
       <Header />
       <body className="bodytry">
-        <div class="containerR">
-          <div class="form-containerR">
-            <div class="left-containerR">
-              <div class="left-inner-containerR">
+        <div className="containerR">
+          <div className="form-containerR">
+            <div className="left-containerR">
+              <div className="left-inner-containerR">
                 <h2>Let's Chat</h2>
                 <p>Whether you have a question, want to start a project or            simply want to connect.</p>
                 <br />
                 <p>Feel free to send me a message in the contact form</p>
               </div>
             </div>
-            <div class="right-containerR">
-              <div class="right-inner-containerR">
+            <div className="right-containerR">
+              <div className="right-inner-containerR">
                 <form action="#" onSubmit={Submit}>
-                  <h2 class="lg-view">Contact Us</h2>
-                  <h2 class="sm-view">Let's Chat</h2>
+                  <h2 className="lg-view">Contact Us</h2>
+                  <h2 className="sm-view">Let's Chat</h2>
 
                   <input type="text" placeholder="First Name" required value={fname} onChange={(e) => setFname(e.target.value)} />
 

@@ -12,15 +12,15 @@ export default function HeaderContact() {
 
   return (
     <div >
-    <body>
-        <nav class="navbarr">
-                <div class="imgB">
+    <div>
+        <nav className="navbarr">
+                <div className="imgB">
                     <a className="backContact" href="#" onClick={thenav}>< MdOutlineKeyboardBackspace/></a>
             </div>
         </nav>
 
 
-    </body>
+    </div>
 </div>
   )
 }

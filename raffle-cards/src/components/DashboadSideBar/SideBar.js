@@ -46,14 +46,14 @@ export default function DashboardSideBar() {
 
         <div className='sidebar-dash'>
 
-            <div class="containerRr">
+            <div className="containerRr">
 
 
-                <ul class="mcd-menu">
+                <ul className="mcd-menu">
                     <div>
                     <li>
-                        <Link to="/raffles" class="active">
-                            <i class="span1" ><AiOutlineHome /></i>
+                        <Link to="/raffles" className="active">
+                            <i className="span1" ><AiOutlineHome /></i>
                             <strong>Raffles</strong>
                             <small>View Raffles</small>
                         </Link>
