@@ -82,6 +82,9 @@ function Profile() {
                     })
             }
         }
+        else {
+            alert('Password Is not Confirmed!!')
+        }
     }
     useEffect((e) => {
 
