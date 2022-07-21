@@ -222,9 +222,10 @@ label span {
 }
  */
 @media screen and (max-width: 1000px) {
+   
     .containerr {
-        border: none;
-        width: 100%;
+   
+        width: 90%;
         height: 0;
         padding-bottom: 55%;
     }

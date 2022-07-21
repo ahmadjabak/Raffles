@@ -181,7 +181,7 @@
     width: 4.5vw;
 }
 
-.imgB {
+.imgBB {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -231,6 +231,10 @@
     .imgLogo {
         width: 50px;
 
+    }
+
+    .imgBB{
+        margin-left: 100px;
     }
 
 }

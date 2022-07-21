@@ -138,6 +138,7 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    margin-left: 25px;
 }
 
 .buttons input {
@@ -173,4 +174,8 @@
 
 
     }
+
+.carousel-item .buttons {
+    margin-left: 110px;
+}
 }

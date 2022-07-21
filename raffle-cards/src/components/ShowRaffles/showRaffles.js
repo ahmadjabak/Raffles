@@ -49,7 +49,7 @@ export default function ShowRaffles(props) {
   return (
     <div>
     
-      <form class="search" action="" onSubmit={onSubmitHandler}>
+      <form className="search" action="" onSubmit={onSubmitHandler}>
         <input type="search" placeholder="Search here..." onChange={(e) => onSubmitHandler(e, e.target.value)}/>
       </form>
       

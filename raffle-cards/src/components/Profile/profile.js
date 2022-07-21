@@ -103,16 +103,16 @@ function Profile() {
     })
 
     return (
-        <div class="panel">
-            <form class="inputs">
-                <div class="inputsitem">
-                    <div class="container-profile">
-                        <div class="avatar-upload">
-                            <div class="avatar-edit">
+        <div className="panel">
+            <form className="inputs">
+                <div className="inputsitem">
+                    <div className="container-profile">
+                        <div className="avatar-upload">
+                            <div className="avatar-edit">
                                 <input type='file' id="imageUpload" onChange={onChangeFile} />
                                 <label for="imageUpload"></label>
                             </div>
-                            <div class="avatar-preview">
+                            <div className="avatar-preview">
                                 <img alt="" id="imagePreview" src={image ? image : `/images/${data1.image}`} />
                             </div>
                         </div>
@@ -125,7 +125,7 @@ function Profile() {
                     <input required value={confirm} onChange={(e) => setconfirm(e.target.value)} className='inputsinputs' type="Password" class="input" placeholder='Re-type Password...'></input>
                 </div>
 
-                <div class="inputsitem inputsitem--cta">
+                <div className="inputsitem inputsitem--cta">
                     <button type="submit" className="btn1" onClick={onSubmitHandler} >Reset</button>
                 </div>
             </form>
