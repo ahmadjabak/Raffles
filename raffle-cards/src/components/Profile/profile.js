@@ -114,18 +114,18 @@ function Profile() {
                         <div className="avatar-upload">
                             <div className="avatar-edit">
                                 <input type='file' id="imageUpload" onChange={onChangeFile} />
-                                <label for="imageUpload"></label>
+                                <label htmlFor="imageUpload"></label>
                             </div>
                             <div className="avatar-preview">
                                 <img alt="" id="imagePreview" src={image ? image : `/images/${data1.image}`} />
                             </div>
                         </div>
                     </div>
-                    <label for="new-username" className="inputslabel">New Username</label>
+                    <label htmlFor="new-username" className="inputslabel">New Username</label>
                     <input required value={username} onChange={(e) => setusername(e.target.value)} className='inputsinputs' type="text" placeholder='Type Username...'></input>
-                    <label for="previous-password" className="inputslabel">New password</label>
+                    <label htmlFor="previous-password" className="inputslabel">New password</label>
                     <input required value={password} onChange={(e) => setpassword(e.target.value)} className='inputsinputs' type="Password" placeholder='Type Password...'></input>
-                    <label for="new-password" className="inputslabel">Confirm password</label>
+                    <label htmlFor="new-password" className="inputslabel">Confirm password</label>
                     <input required value={confirm} onChange={(e) => setconfirm(e.target.value)} className='inputsinputs' type="Password" placeholder='Re-type Password...'></input>
                 </div>
 

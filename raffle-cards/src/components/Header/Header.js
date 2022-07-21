@@ -8,7 +8,7 @@ import {Link} from "react-router-dom"
 export default function Header() {
     return (
         <div >
-            <body>
+            <div>
                 <nav className="navbar">
                 
                    
@@ -21,7 +21,7 @@ export default function Header() {
                     <ul className="nav-links">
                        
                         <input type="checkbox" id="checkbox_toggle" />
-                        <label for="checkbox_toggle" className="hamburger">&#9776;</label>
+                        <label htmlFor="checkbox_toggle" className="hamburger">&#9776;</label>
                       
                         <div className="menu">
                             <li className="li"><Link to='/'>Home</Link></li>
@@ -32,7 +32,7 @@ export default function Header() {
                 </nav>
 
 
-            </body>
+            </div>
         </div>
     )
 }

@@ -168,10 +168,10 @@ export default function AddRaffles() {
               <input type="file" id="upload-image" className="form-field animation a4" placeholder="Image" onChange={onChangeFile} required />
               <input type="text" className="form-field animation a3" placeholder="Price" value={price} onChange={(e) => { setPrice(e.target.value) }} required />
 
-              <label for="Start Date" className="start_end">Start Date</label>
+              <label htmlFor="Start Date" className="start_end">Start Date</label>
               <input type="date" className="form-field animation a4" id="imputDate" value={start} onChange={(e) => { setStart(e.target.value) }} required />
 
-              <label for="Start Date" className="start_end">End Date</label>
+              <label htmlFor="Start Date" className="start_end">End Date</label>
               <input type="date" className="form-field animation a3" value={end} onChange={(e) => { setEnd(e.target.value) }} required />
 
               <textarea type="text" className="form-field animation a4" placeholder="Description" value={desc} onChange={(e) => { setDesc(e.target.value) }} required />
@@ -200,17 +200,17 @@ export default function AddRaffles() {
         <div className="container1">
           <div className="left">
             <div className="form" encType="multipart/from-data">
-              <label for="Start Date" className="start_end">Raffle Name</label>
+              <label htmlFor="Start Date" className="start_end">Raffle Name</label>
               <input type="text" className="form-field animation a3" placeholder="Raffle Name" value={name} onChange={(e) => setName(e.target.value)} required />
-              <label for="Start Date" className="start_end">Image</label>
+              <label htmlFor="Start Date" className="start_end">Image</label>
               <input type="file" className="form-field animation a4" onChange={onChangeFile} required />
-              <label for="Start Date" className="start_end">Price</label>
+              <label htmlFor="Start Date" className="start_end">Price</label>
               <input type="text" className="form-field animation a3" placeholder="Price" value={price} onChange={(e) => { setPrice(e.target.value) }} required />
-              <label for="Start Date" className="start_end">Start Date</label>
+              <label htmlFor="Start Date" className="start_end">Start Date</label>
               <input type="text" className="form-field animation a4" placeholder="Start Date" value={start} onChange={(e) => { setStart(e.target.value) }} required />
-              <label for="Start Date" className="start_end">End Date</label>
+              <label htmlFor="Start Date" className="start_end">End Date</label>
               <input type="text" className="form-field animation a3" value={end} onChange={(e) => { setEnd(e.target.value) }} required />
-              <label for="Start Date" className="start_end">Message</label>
+              <label htmlFor="Start Date" className="start_end">Message</label>
               <textarea type="text" className="form-field animation a4" placeholder="Description" value={desc} onChange={(e) => { setDesc(e.target.value) }} required />
               <div className="save">
                 <button type="submit" className="btn" onClick={onSubmitHandlers}>SAVE</button>
