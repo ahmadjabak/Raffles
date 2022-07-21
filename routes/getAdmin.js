@@ -7,6 +7,9 @@ router.use(express.json());
 
 require("dotenv").config();
 
+
+// @desc compare the inputs of login(username and password) and if they do match generate a token
+// @access Public
 router.post('/',
     async (req, res) => {
         try {

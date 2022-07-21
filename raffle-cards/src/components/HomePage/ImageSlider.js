@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react'
 
 import './ImageSlider.css';
 
+// automatic slider with 3 harcoded images that slides every 6 seconds
+
  const SliderData = [
     {
         image: 'https://images.unsplash.com/photo-1623068285726-21b0fcabe7f8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',

@@ -8,7 +8,10 @@ import {
     faLinkedin,
     faGithub
   } from "@fortawesome/free-brands-svg-icons";
-  import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
+  
+
+// footer includes all information with icons of linkedIn, twitter, github, youtube for the company
 export default function Footer() {
     return (
 

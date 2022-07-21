@@ -6,7 +6,9 @@ import "./addraffles.scss"
 import './addRafflesHeader.css'
 
 
-
+// a function to add and edit raffle
+// to add a raffle(/addraffle) you need to enter all inputs and then on add button
+// to edit a raffle(/editraffle) you need to update the image and update what you need in the other inputs
 
 export default function AddRaffles() {
   const location = useLocation();

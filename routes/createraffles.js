@@ -4,9 +4,9 @@ const multer=require("multer");
 
 
 router.use(express.json());
-const ObjectId = require("mongodb").ObjectId;
+
 const raffles = require("../schema/Raffles")
-const contact=require("../schema/Contactus")
+
 
 const storage = multer.diskStorage({
     destination: (req, file, callback)=>{
@@ -16,7 +16,10 @@ const storage = multer.diskStorage({
     callback(null, file.originalname);
     }
 }) 
-const upload = multer({storage: storage});
+const upload = multer({ storage: storage });
+
+// @desc add a new raffle
+// @access Private
 router.post("/", upload.single("ticketImage"),(req, res) => {
     const NewRaffles = new raffles({
         image: req.file.originalname,
@@ -31,13 +34,17 @@ router.post("/", upload.single("ticketImage"),(req, res) => {
         (err => res.status(400).json('Error: ' + err))
 });
 
-
+// @desc check the available raffles
+// @access Public
 router.get('/', (req, res) => {
     raffles.find()
         .then(raffles => res.json(raffles))
         .catch(err => res.status(400)
             .json("error: " + err))
 })
+
+// @desc update an existing raffle
+// @access Private
 router.put('/:id',upload.single("ticketImage"), (req, res) => {
 
     raffles.findOneAndUpdate(({ _id: req.params.id }), {
@@ -60,6 +67,9 @@ router.put('/:id',upload.single("ticketImage"), (req, res) => {
     })
 
 })
+
+// @desc delete an existing raffle
+// @access Private
 router.delete('/', (req, res) => {
     raffles.findByIdAndDelete(req.query.id)
         .then(() => res.json('raffle deleted'))

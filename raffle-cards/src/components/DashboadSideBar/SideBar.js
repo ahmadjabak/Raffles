@@ -14,6 +14,8 @@ export default function DashboardSideBar() {
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(true);
 
+    // raffles will be fetched at dashboard for the admin to check the available raffles
+
     const fetchRaffles = async () => {
         await fetch(`http://localhost:8080/contactus/number`, {
             method: 'GET',

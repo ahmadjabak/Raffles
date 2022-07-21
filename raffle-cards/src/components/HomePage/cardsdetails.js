@@ -11,6 +11,8 @@ import LoadingPage from "../LoadingPage/LoadingPage";
 import ScrollToTop from "react-scroll-to-top";
 
 
+// reading all the available raffles for sale, after being added by the admin, with a search bar where when typed in the search input it will search for the name of raffle with the input that is typed
+
 
 
 export default function Detailedcards(props) {

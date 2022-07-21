@@ -6,6 +6,8 @@ export default function ShowRaffles(props) {
   const [data, setData] = useState([]);
   const [data1, setData1] = useState([]);
 
+
+  // show all the raffles, where admin can edit the raffle or delete it, along with the search bar in dashboard side same as in user side, as the admin type, raffle will be shown onchange on the input of search bar
   
   useEffect(() => {
     fetch("http://localhost:8080/raffles", {

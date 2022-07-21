@@ -17,6 +17,10 @@ export default function ContactUs() {
   var date = now.toLocaleDateString();
   const time = date;
 
+
+  // when submit button is clicked, the form will be saved to database with an alert that says 'Message sent' and if the user miss any required input(all except phone number), an alert will show that say 'fill all inputs'
+
+
   const Submit = (e) => {
 
 

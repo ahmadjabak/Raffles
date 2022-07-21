@@ -13,6 +13,8 @@ function Profile() {
     const [confirm, setconfirm] = useState('');
     const [token, setToken] = useState(null);
     const [image, setImage] = useState('')
+
+    // This page is for changing the admin information(username and password) that contain 3 inputs (new username, new pawword, and confirm password where the new ones will replaced by the old ones in the database ), and the admin will be able also to upload an image in this page
     const tokenRemove = () => {
         localStorage.removeItem('token');
         setToken(localStorage.getItem('token'))
@@ -117,11 +119,11 @@ function Profile() {
                         </div>
                     </div>
                     <label for="new-username" className="inputslabel">New Username</label>
-                    <input required value={username} onChange={(e) => setusername(e.target.value)} className='inputsinputs' type="text" class="input" placeholder='Type Username...'></input>
+                    <input required value={username} onChange={(e) => setusername(e.target.value)} className='inputsinputs' type="text" placeholder='Type Username...'></input>
                     <label for="previous-password" className="inputslabel">New password</label>
-                    <input required value={password} onChange={(e) => setpassword(e.target.value)} className='inputsinputs' type="Password" class="input" placeholder='Type Password...'></input>
+                    <input required value={password} onChange={(e) => setpassword(e.target.value)} className='inputsinputs' type="Password" placeholder='Type Password...'></input>
                     <label for="new-password" className="inputslabel">Confirm password</label>
-                    <input required value={confirm} onChange={(e) => setconfirm(e.target.value)} className='inputsinputs' type="Password" class="input" placeholder='Re-type Password...'></input>
+                    <input required value={confirm} onChange={(e) => setconfirm(e.target.value)} className='inputsinputs' type="Password" placeholder='Re-type Password...'></input>
                 </div>
 
                 <div className="inputsitem inputsitem--cta">

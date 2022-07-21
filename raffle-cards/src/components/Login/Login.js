@@ -12,6 +12,10 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const [data, setData] = useState([]);
   const navigate = useNavigate();
+
+  // compare the username and password typed are the same that are in database, token will be generated and set in local storage in order to be read(get) for future usages 
+
+
   const onSubmitHandler = (e) => {
     const msg = { username, password };
     e.preventDefault();

@@ -3,6 +3,10 @@ const router = express.Router();
 
 const contact = require("../schema/Contactus");
 
+
+// @desc save the contact us form
+// @access Public
+
 router.post('/', async (req, res) => {
     const newMsg = new contact({
         fname: req.query.fname,
@@ -21,6 +25,9 @@ router.post('/', async (req, res) => {
 
 });
 
+// @desc read the contact us form
+// @access Private
+
 router.get('/', (req, res) => {
     contact.find()
         .then(contact => res.json(contact))
@@ -28,12 +35,18 @@ router.get('/', (req, res) => {
             .json("error: " + err))
 })
 
+
+// @desc delete the contact us form
+// @access Private
+
 router.delete('/', (req, res) => {
     contact.findByIdAndDelete(req.query.id)
         .then(() => res.json('Deleted Successfuly'))
         .catch(err => res.status(400).json('Error: ' + err))
 })
 
+// @desc read the available contact us forms or undeleted (badge)
+// @access Private
 router.get('/number', (req, res) => {
 
     contact.count({})
