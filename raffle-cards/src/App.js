@@ -4,7 +4,7 @@ import {
   Routes,
 
 } from "react-router-dom"
-import './App.css';
+
 import Detailedcards from "./components/HomePage/cardsdetails";
 import ContactUs from './components/ContactUs/ContactUsForm';
 import Login from "./components/Login/Login";
@@ -13,7 +13,6 @@ import AddDash from "./components/AddRaffles/AddDash";
 import ProfileDash from "./components/Profile/ProfileDash";
 import ContactDash from "./components/ContactUsDashboard/ContactDash";
 
-//import {Switch} from "react-router-dom"
 
 const token = localStorage.getItem('token')
 function App() {

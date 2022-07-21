@@ -9,6 +9,8 @@ function AdminDash() {
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(true);
   useEffect(() => {
+
+    // show all the raffles in the dashboard same as from the user side
     fetch("http://localhost:8080/raffles", {
       method: 'GET',
       headers: {

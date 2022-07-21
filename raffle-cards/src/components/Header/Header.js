@@ -3,6 +3,8 @@ import "./Header.css"
 import Logo from '../images/logo.png'
 import {Link} from "react-router-dom"
 
+
+// with 2 word(home and contact us) if the user needs to send a message to the company, or check the available raffles at home page
 export default function Header() {
     return (
         <div >

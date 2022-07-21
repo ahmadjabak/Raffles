@@ -8,7 +8,8 @@ router.use(express.json());
 
 const raffles = require("../schema/Raffles")
 
-
+// @desc get the raffle id
+// @access Private
 router.get('/:id', (req, res) => {
     const id = req.params.id;
     raffles.findOne({_id : id})

@@ -1,10 +1,10 @@
 import logo from "../images/logo.png"
-import ticket from "../images/download.png"
+
 import { FaTicketAlt } from "react-icons/fa"
 import "../HomePage/homepagecards.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from 'react';
-import AddRaffles from "../AddRaffles/addRaffles";
+
 
 export default function AdminCards({ img, price, name, start, end, id,desc }) {
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ export default function AdminCards({ img, price, name, start, end, id,desc }) {
   const [token, setToken] = useState(null);
 
   const onSubmitHandler = async (e) => {
-
+  // the admin here can delete any raffle by pressing on delete button with a confirmation message to the button
     console.log(id)
     if (window.confirm("Are you sure you want to delete this raffle?")){
     await fetch(`http://localhost:8080/raffles?id=${id}`, {

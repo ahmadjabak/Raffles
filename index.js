@@ -4,7 +4,7 @@ const app = express();
 const cors = require("cors");
 const connection = require("./db");
 const searchByTitle = require('./routes/search');
-const auth = require('./middleware/auth')
+
 connection();
 
 var fs = require('fs');

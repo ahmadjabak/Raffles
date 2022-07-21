@@ -7,12 +7,14 @@ import { AiOutlineHome } from "react-icons/ai"
 import { ImTicket } from "react-icons/im"
 import { FaRegAddressCard } from "react-icons/fa"
 import { CgProfile } from "react-icons/cg"
-import ShowRaffles from "../ShowRaffles/showRaffles";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+
 import LoadingPage from "../LoadingPage/LoadingPage";
 export default function DashboardSideBar() {
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(true);
+
+    // raffles will be fetched at dashboard for the admin to check the available raffles
 
     const fetchRaffles = async () => {
         await fetch(`http://localhost:8080/contactus/number`, {
@@ -35,13 +37,6 @@ export default function DashboardSideBar() {
         fetchRaffles()
         console.log(data)
     }, [])
-
-    // if (loading) return <LoadingPage />;
-
-    const toreload=()=>{
-        window.location.reload();
-    }
-
     return (
 
         <div className='sidebar-dash'>
@@ -52,39 +47,39 @@ export default function DashboardSideBar() {
                 <ul className="mcd-menu">
                     <div>
                     <li>
-                        <Link to="/raffles" className="active">
+                            <NavLink to="/raffles" className={({isActive})=>(isActive ? "active" : "")} >
                             <i className="span1" ><AiOutlineHome /></i>
                             <strong>Raffles</strong>
                             <small>View Raffles</small>
-                        </Link>
+                            </NavLink>
                     </li>
                     </div>
                     <div>
                     <li>
-                        <Link to="/addraffles">
+                        <NavLink to="/addraffles" className={({isActive})=>(isActive ? "active" : "")} >
                             <i className="span1"><ImTicket /></i>
-                            <strong onClick={toreload}>Add Raffles</strong>
+                            <strong>Add Raffles</strong>
                             <small>New</small>
-                        </Link>
+                        </NavLink>
                     </li>
                     </div>
                     <div>
                     <li>
-                        <Link to="/contactadmin" >
+                        <NavLink to="/contactadmin" className={({isActive})=>(isActive ? "active" : "")} >
                             <i className="span1"><FaRegAddressCard /></i>
                             <strong>Contact Us</strong>
                             <small>View</small>
                             <mark className="not">{data}</mark>
-                        </Link>
+                        </NavLink>
                     </li>
                     </div>
                     <div>
                     <li>
-                        <Link to="/profile" >
+                        <NavLink to="/profile" className={({isActive})=>(isActive ? "active" : "")} >
                             <i className="span1"><CgProfile /></i>
                             <strong>Profile</strong>
                             <small>Edit</small>
-                        </Link>
+                        </NavLink>
                     </li>
                     </div>
                 </ul>

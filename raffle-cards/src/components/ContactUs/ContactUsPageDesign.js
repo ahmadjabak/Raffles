@@ -1,4 +1,3 @@
-
 import "./contactDesign.scss"
 export default function ContactDesgin() {
     return (

@@ -3,7 +3,7 @@ import "./ContactUsDashboard.css"
 import { RiDeleteBin5Line } from "react-icons/ri"
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'
-import HeaderContact from "./HeaderContact";
+
 import LoadingPage from "../LoadingPage/LoadingPage";
 
 

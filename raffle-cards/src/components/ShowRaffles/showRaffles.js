@@ -1,13 +1,13 @@
 import AdminCards from './AdminCards';
 import { useState, useEffect } from 'react';
 import "./show.scss";
-import DashboardSideBar from '../DashboadSideBar/SideBar';
-import AddRaffles from "../AddRaffles/addRaffles";
-import HeaderSideBar from '../DashboadSideBar/HeaderSideBar';
+
 export default function ShowRaffles(props) {
   const [data, setData] = useState([]);
   const [data1, setData1] = useState([]);
-  const [name, setName] = useState('');
+
+
+  // show all the raffles, where admin can edit the raffle or delete it, along with the search bar in dashboard side same as in user side, as the admin type, raffle will be shown onchange on the input of search bar
   
   useEffect(() => {
     fetch("http://localhost:8080/raffles", {
@@ -31,7 +31,6 @@ export default function ShowRaffles(props) {
   const onSubmitHandler = async (e, name) => {
     console.log(name)
     e.preventDefault();
-    // props.getData(e.target.data.name.value)
     await fetch(`http://localhost:8080/search?name=${name}`, {
       method: 'GET',
       headers: {

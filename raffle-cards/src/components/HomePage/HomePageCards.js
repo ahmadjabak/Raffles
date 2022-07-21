@@ -1,6 +1,5 @@
 
 import logo from "../images/logo.png"
-import ticket from "../images/download.png"
 import "./homepagecards.css";
 import { FaTicketAlt } from "react-icons/fa"
 

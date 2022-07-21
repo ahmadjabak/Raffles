@@ -1,15 +1,13 @@
 import React, { useState } from "react"
-import Logo from '../images/logo.png'
+
 
 import "./Contact.scss"
 import Footer from "../Footer/Footer"
 import Header from "../Header/Header"
-import ContactDesgin from "./ContactUsPageDesign"
-import { set } from "mongoose"
+
 export default function ContactUs() {
 
-  // const [data, setData]= useState(null);
-  // const [error, setError]= useState(null);
+ 
   const [fname, setFname] = useState('');
   const [lname, setLname] = useState('');
   const [phonenumber, setPhonenumber] = useState('');
@@ -18,6 +16,10 @@ export default function ContactUs() {
   var now = new Date()
   var date = now.toLocaleDateString();
   const time = date;
+
+
+  // when submit button is clicked, the form will be saved to database with an alert that says 'Message sent' and if the user miss any required input(all except phone number), an alert will show that say 'fill all inputs'
+
 
   const Submit = (e) => {
 

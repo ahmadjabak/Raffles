@@ -14,6 +14,9 @@ const storage = multer.diskStorage({
 }) 
 const upload = multer({storage: storage});
 
+// @desc update admin information that includes image,username, and password
+// @access Private
+
 router.put('/',upload.single("profileImage"), (req, res) => {
 
     Admin.findOneAndUpdate(({_id: '62c215342fb8c914a7cc3758'}), {
@@ -33,6 +36,10 @@ router.put('/',upload.single("profileImage"), (req, res) => {
     })
 
 })
+
+// @desc get admin information that includes image,username, and password
+// @access Private
+
 router.get('/', (req, res) => {
   
     Admin.findOne({_id :'62c215342fb8c914a7cc3758'})
