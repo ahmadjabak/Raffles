@@ -68,7 +68,7 @@ export default function Login() {
       }
   return (
     <div>
-      <body>
+      <div>
         <img className="wave" src={wave}></img>
         <div className="container">
           <div className="img">
@@ -102,7 +102,7 @@ export default function Login() {
             </form>
           </div>
         </div>
-      </body>
+      </div>
     </div>
   )
 }

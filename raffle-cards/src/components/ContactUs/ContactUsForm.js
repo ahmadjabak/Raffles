@@ -59,7 +59,7 @@ export default function ContactUs() {
   return (
     <div>
       <Header />
-      <body className="bodytry">
+      <div className="bodytry">
         <div className="containerR">
           <div className="form-containerR">
             <div className="left-containerR">
@@ -89,7 +89,7 @@ export default function ContactUs() {
             </div>
           </div>
         </div>
-      </body>
+      </div>
       <Footer />
     </div>
   )
