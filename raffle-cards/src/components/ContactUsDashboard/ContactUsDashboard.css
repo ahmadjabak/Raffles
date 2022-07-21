@@ -96,8 +96,7 @@ tr:nth-child(even) {
         display: block;
         margin-bottom: 15px;
         right: 150px;
-        justify-content: center;
-      
+        margin-left: 10px;
     }
 
     td:before {
@@ -108,7 +107,7 @@ tr:nth-child(even) {
         font-weight: 600;
         font-size: 14px;
         text-align: left;
-        color: black;
+        color:#32be8f;
     }
 
     /* Section six*/

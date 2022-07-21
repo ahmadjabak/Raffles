@@ -9,6 +9,7 @@ import { useState, useEffect } from 'react';
 import { AiOutlineSearch } from "react-icons/ai"
 import LoadingPage from "../LoadingPage/LoadingPage";
 import ScrollToTop from "react-scroll-to-top";
+import Logo from '../images/logo.png'
 
 
 
@@ -17,7 +18,7 @@ export default function Detailedcards(props) {
   const [data1, setData1] = useState([])
   const [name, setName] = useState('');
   const [loading, setLoading] = useState(true);
-  const [page, setPage] =useState(3);
+  const [page, setPage] = useState(3);
   useEffect(() => {
     fetch("http://localhost:8080/raffles", {
       method: 'GET',
@@ -53,36 +54,37 @@ export default function Detailedcards(props) {
       })
   }
 
-  const showRaffles = ()=>{
+  const showRaffles = () => {
     let theRaffles = document.getElementById("hideit");
-    setPage((prevValue)=>prevValue + 3);
-    if(page >=data.length){
-      theRaffles.style.visibility= "hidden";
+    setPage((prevValue) => prevValue + 3);
+    if (page >= data.length) {
+      theRaffles.style.visibility = "hidden";
     }
   }
-  
+
   console.log(data);
   if (loading) return <LoadingPage />;
- 
+
   return (
     <div>
       <Header />
       <Home />
       <DesignedCards />
       <ScrollToTop className="icon-position icon-style" />
-      <h1 className="h1carddetails">
+      {/* <h1 className="h1carddetails">
         Find something memorable, join a community doing good.
-      </h1>
+      </h1> */}
+
       <div className="searchHome">
-      
+
         <p className="pCard">Search for a Raffle Card</p>
-        
+
         <div class="boxHome">
           <form name="search">
             <input type="text" class="inputHome" name="txt" onChange={(e) => onSubmitHandler(e, e.target.value)} onmouseout="this.value = ''; this.blur();" />
           </form>
-         
-        </div> 
+
+        </div>
       </div>
 
       {(data1.length > 0) ?
@@ -102,7 +104,7 @@ export default function Detailedcards(props) {
         <div className="detailed-cards-container">
 
           {
-            data.slice(0,page).map((datas) =>
+            data.slice(0, page).map((datas) =>
               <HomePageCards id={datas._id} desc={datas.desc} price={datas.price} img={datas.image} name={datas.name} start={datas.startdate} end={datas.endate} />,
 
             )

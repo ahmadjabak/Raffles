@@ -14,7 +14,7 @@
 
 
 .headers {
- background-color: white;
+ background-color: #666;
   height: max-content;
   padding: 10px;
   display: flex;
@@ -29,6 +29,11 @@
 
 .spanH {
   color: #32be8f;
+}
+
+.imGG h1{
+  font-size: 20px;
+  color: white;
 }
 
 .iconnn {
@@ -257,5 +262,6 @@ strong{
 }
 .imGG h1{
   font-size: 20px;
+  color: white;
 }
 }
