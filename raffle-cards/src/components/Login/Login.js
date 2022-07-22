@@ -53,19 +53,6 @@ export default function Login() {
 
 
   
-  function showeye() {
-  const toggle = document.querySelector(".toggle"),
-        input = document.querySelector(".input");
-
-        toggle.addEventListener("click", () =>{
-            if(input.type ==="password"){
-              input.type = "text";
-              toggle.classList.replace(<AiFillEyeInvisible/>, <AiFillEye/>);
-            }else{
-              input.type = "password";
-            }
-        })
-      }
   return (
     <div>
       <div>

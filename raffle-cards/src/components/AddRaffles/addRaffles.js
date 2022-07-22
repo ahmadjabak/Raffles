@@ -207,10 +207,10 @@ export default function AddRaffles() {
               <label htmlFor="Start Date" className="start_end">Price</label>
               <input type="text" className="form-field animation a3" placeholder="Price" value={price} onChange={(e) => { setPrice(e.target.value) }} required />
               <label htmlFor="Start Date" className="start_end">Start Date</label>
-              <input type="text" className="form-field animation a4" placeholder="Start Date" value={start} onChange={(e) => { setStart(e.target.value) }} required />
+              <input type="date" className="form-field animation a4" placeholder="Start Date" value={start} onChange={(e) => { setStart(e.target.value) }} required />
               <label htmlFor="Start Date" className="start_end">End Date</label>
-              <input type="text" className="form-field animation a3" value={end} onChange={(e) => { setEnd(e.target.value) }} required />
-              <label htmlFor="Start Date" className="start_end">Message</label>
+              <input type="date" className="form-field animation a3" value={end} onChange={(e) => { setEnd(e.target.value) }} required />
+              <label htmlFor="Start Date" className="start_end">Description</label>
               <textarea type="text" className="form-field animation a4" placeholder="Description" value={desc} onChange={(e) => { setDesc(e.target.value) }} required />
               <div className="save">
                 <button type="submit" className="btn" onClick={onSubmitHandlers}>SAVE</button>
