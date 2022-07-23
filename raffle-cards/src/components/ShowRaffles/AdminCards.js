@@ -18,7 +18,7 @@ export default function AdminCards({ img, price, name, start, end, id,desc }) {
   // the admin here can delete any raffle by pressing on delete button with a confirmation message to the button
     console.log(id)
     if (window.confirm("Are you sure you want to delete this raffle?")){
-    await fetch(`http://localhost:8080/raffles?id=${id}`, {
+    await fetch(`http://localhost:8080/api/raffles?id=${id}`, {
       method: 'DELETE',
       headers: {
         "Content-Type": "application/json"

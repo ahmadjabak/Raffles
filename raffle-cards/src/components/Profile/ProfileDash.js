@@ -10,7 +10,7 @@ function ProfileDash() {
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    fetch("http://localhost:8080/raffles", {
+    fetch("http://localhost:8080/api/raffles", {
       method: 'GET',
       headers: {
         "Content-Type": "application/json"

@@ -10,7 +10,7 @@ export default function ShowRaffles(props) {
   // show all the raffles, where admin can edit the raffle or delete it, along with the search bar in dashboard side same as in user side, as the admin type, raffle will be shown onchange on the input of search bar
   
   useEffect(() => {
-    fetch("http://localhost:8080/raffles", {
+    fetch("http://localhost:8080/api/raffles", {
       method: 'GET',
       headers: {
         "Content-Type": "application/json"
@@ -31,7 +31,7 @@ export default function ShowRaffles(props) {
   const onSubmitHandler = async (e, name) => {
     console.log(name)
     e.preventDefault();
-    await fetch(`http://localhost:8080/search?name=${name}`, {
+    await fetch(`http://localhost:8080/api/search?name=${name}`, {
       method: 'GET',
       headers: {
         "Content-Type": "application/json"

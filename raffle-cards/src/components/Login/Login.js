@@ -19,7 +19,7 @@ export default function Login() {
   const onSubmitHandler = (e) => {
     const msg = { username, password };
     e.preventDefault();
-    fetch(`http://localhost:8080/admin`, {
+    fetch(`http://localhost:8080/api/admin`, {
       method: 'POST',
       headers: {
         "Content-Type": "application/json"

@@ -64,7 +64,7 @@ function Profile() {
 
                 e.preventDefault();
 
-                axios.put(`http://localhost:8080/profile`, formData, {
+                axios.put(`http://localhost:8080/api/profile`, formData, {
 
                     headers: {
                         "Content-Type": "application/json"
@@ -88,7 +88,7 @@ function Profile() {
     }
     useEffect((e) => {
 
-        fetch(`http://localhost:8080/profile`, {
+        fetch(`http://localhost:8080/api/profile`, {
             method: 'GET',
             headers: {
                 "Content-Type": "application/json"
