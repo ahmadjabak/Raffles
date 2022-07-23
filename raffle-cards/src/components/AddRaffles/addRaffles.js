@@ -75,7 +75,7 @@ export default function AddRaffles() {
     }
     else if (window.confirm("Are you sure you want to add this raffle ?")) {
       axios
-        .post("http://localhost:8080/raffles", formData, {
+        .post("http://localhost:8080/api/raffles", formData, {
           method: 'POST',
           headers: { 'Content-Type': 'multipart/form-data' },
 
@@ -103,7 +103,7 @@ export default function AddRaffles() {
 
     if (window.confirm("Are you sure you want to add this raffle ?")) {
       axios
-        .put(`http://localhost:8080/raffles/${location.state.id}`, formData, {
+        .put(`http://localhost:8080/api/raffles/${location.state.id}`, formData, {
 
           headers: { 'Content-Type': 'multipart/form-data' },
 
@@ -122,7 +122,7 @@ export default function AddRaffles() {
   }
 
   const fetchRaffles = async () => {
-    await fetch(`http://localhost:8080/get/${id || location.state.id}`, {
+    await fetch(`http://localhost:8080/api/get/${id || location.state.id}`, {
       method: 'GET',
       headers: {
         "Content-Type": "application/json"

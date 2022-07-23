@@ -36,7 +36,7 @@ export default function ContactUs() {
 
     if (!fname || !lname || !email || !message || fname === " " || lname === " " || email === " " || message === " ") {
     } else {
-      fetch(`http://localhost:8080/contactus?fname=${fname}&lname=${lname}&phonenumber=${phonenumber}&email=${email}&time=${time}&message=${message}`, {
+      fetch(`http://localhost:8080/api/contactus?fname=${fname}&lname=${lname}&phonenumber=${phonenumber}&email=${email}&time=${time}&message=${message}`, {
         method: 'POST',
         headers: { "Contact-Type": "application/json" }
 

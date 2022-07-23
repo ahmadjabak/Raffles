@@ -45,7 +45,7 @@ export default function ContactUsDesign({ id }) {
   }, [])
 
   useEffect(() => {
-    fetch("http://localhost:8080/contactus", {
+    fetch("http://localhost:8080/api/contactus", {
       method: 'GET',
       headers: {
         "Content-Type": "application/json"
@@ -64,7 +64,7 @@ export default function ContactUsDesign({ id }) {
 
   const onSubmitHandler = (id) => {
     if (window.confirm("Are you sure you want to delete?")) {
-      fetch(`http://localhost:8080/contactus?id=${id}`, {
+      fetch(`http://localhost:8080/api/contactus?id=${id}`, {
         method: 'DELETE',
         headers: {
           "Content-Type": "application/json"

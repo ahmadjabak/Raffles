@@ -11,7 +11,7 @@ function AdminDash() {
   useEffect(() => {
 
     // show all the raffles in the dashboard same as from the user side
-    fetch("http://localhost:8080/raffles", {
+    fetch("http://localhost:8080/api/raffles", {
       method: 'GET',
       headers: {
         "Content-Type": "application/json"

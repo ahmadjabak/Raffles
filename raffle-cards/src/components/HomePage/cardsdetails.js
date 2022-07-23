@@ -21,7 +21,7 @@ export default function Detailedcards(props) {
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(3);
   useEffect(() => {
-    fetch("http://localhost:8080/raffles", {
+    fetch("http://localhost:8080/api/raffles", {
       method: 'GET',
       headers: {
         "Content-Type": "application/json"
@@ -39,7 +39,7 @@ export default function Detailedcards(props) {
   const onSubmitHandler = async (e, name) => {
     console.log(name)
     e.preventDefault();
-    await fetch(`http://localhost:8080/search?name=${name}`, {
+    await fetch(`http://localhost:8080/api/search?name=${name}`, {
       method: 'GET',
       headers: {
         "Content-Type": "application/json"

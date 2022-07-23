@@ -17,7 +17,7 @@ export default function DashboardSideBar() {
     // raffles will be fetched at dashboard for the admin to check the available raffles
 
     const fetchRaffles = async () => {
-        await fetch(`http://localhost:8080/contactus/number`, {
+        await fetch(`http://localhost:8080/api/contactus/number`, {
             method: 'GET',
             headers: {
                 "Content-Type": "application/json"
