@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css?family=Just+Another+Hand');
+
+
+#i1,
+#i2,
+#i3,
+#i4,
+#i5 {
+    display: none;
+}
+
+.the_buttons {
+    display: none;
+}
+
+.icon-position {
+    position: fixed;
+    bottom: 40px;
+    right: 25px;
+    z-index: 20;
+}
+
+.icon-style {
+    background-color: #32be8f;
+    border: 2px solid #fff;
+    height: 50px;
+    color: #fff;
+    cursor: pointer;
+    animation: movebtn 3s ease-in-out infinite;
+    transition: all .5s ease-in-out;
+}
+
+.icon-style:hover {
+    animation: none;
+    background: #fff;
+    color: #32be8f;
+    border: 2px solid #32be8f;
+}
+
+@keyframes movebtn {
+    0% {
+        transform: translateY(0px);
+    }
+
+    25% {
+        transform: translateY(20px);
+    }
+
+    50% {
+        transform: translateY(0px);
+    }
+
+    75% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+
+
+.containerr {
+    margin: 0 auto;
+    margin-top: 30px;
+    position: relative;
+    width: 70%;
+    height: 0;
+    padding-bottom: 38%;
+    user-select: none;
+    background-color: #1c1c1c;
+    border: solid 10px #666;
+    border-radius: 10px;
+    margin-right: 15px;
+    margin-top: 7%;
+
+}
+
+.the_image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.containerr .slide_img img {
+    width: inherit;
+    height: inherit;
+}
+
+.prev,
+.next {
+    width: 5%;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    background-color: rgba(88, 88, 88, .2);
+    color: rgba(244, 244, 244, .9);
+    z-index: 999;
+    transition: .45s;
+    cursor: pointer;
+    text-align: center;
+}
+
+.next {
+    right: 0;
+
+}
+
+.prev {
+    left: 0;
+}
+
+label span {
+    position: relative;
+    font-size: 60pt;
+    top: 40%;
+    transform: translateY(-50%);
+}
+
+.prev:hover,
+.next:hover {
+    transition: .3s;
+    background-color: rgba(88, 88, 89, .8);
+    color: #ffffff;
+}
+
+.containerr #nav_slide {
+    width: 100%;
+    bottom: -10%;
+    height: 11px;
+    position: absolute;
+    text-align: center;
+    z-index: 99;
+    cursor: default;
+}
+
+#nav_slide .dots {
+    top: -5px;
+    width: 10px;
+    height: 10px;
+    margin: 0 4px;
+    position: relative;
+    border-radius: 100%;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: .4s;
+}
+
+#nav_slide .dots:hover {
+    cursor: pointer;
+    background-color: #32be8f;
+    transition: .25s
+}
+
+.slide_img {
+    z-index: -1;
+}
+
+#i1:checked~#one,
+#i2:checked~#two,
+#i3:checked~#three,
+#i4:checked~#four,
+#i5:checked~#five {
+    z-index: 9;
+    animation: scroll 1s ease-in-out;
+}
+
+#i1:checked~#nav_slide #dot1,
+#i2:checked~#nav_slide #dot2,
+#i3:checked~#nav_slide #dot3,
+#i4:checked~#nav_slide #dot4,
+#i5:checked~#nav_slide #dot5 {
+    background-color: #32be8f;
+}
+
+@keyframes scroll {
+    0% {
+        opacity: .4;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@media screen and (max-width: 1000px) {
+   
+    .containerr {
+   
+        width: 90%;
+        height: 0;
+        padding-bottom: 55%;
+    }
+
+    label span {
+        font-size: 50pt;
+    }
+
+    .prev,
+    .next {
+        width: 15%;
+    }
+
+    #nav_slide .dots {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+@media screen and(min-width: 970px) {
+    .me {
+        display: none;
+    }
+}
